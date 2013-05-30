@@ -1,4 +1,4 @@
-<h1>Listing event_times</h1>
+<h1>Listing Event Times</h1>
 
 <table class="table table-hover">
   <tr>
@@ -14,11 +14,11 @@
 
 <% @event_times.each do |event_time| %>
   <tr>
-    <td><%= event_time.time1 %></td>
-    <td><%= event_time.time2 %></td>
-    <td><%= event_time.time3 %></td>
-    <td><%= event_time.time4 %></td>
-    <td><%= event_time.event_id %></td>
+    <td><%= event_time.time1.strftime('%l:%M %p') %></td>
+    <td><%= event_time.time2.strftime('%l:%M %p') %></td>
+    <td><%= event_time.time3.strftime('%l:%M %p') %></td>
+    <td><%= event_time.time4.strftime('%l:%M %p') %></td>
+    <td><%= event_time.event.title %></td>
     <td><%= link_to 'Show', event_time %></td>
     <td><%= link_to 'Edit', edit_event_time_path(event_time) %></td>
     <td><%= link_to 'Destroy', event_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>

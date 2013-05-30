@@ -3,7 +3,8 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
- 
+    @event_time = EventTime.new
+     @location = Location.new
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -14,9 +15,8 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @event = Event.find(params[:id])
-    @event_times = EventTime.all
-
-    
+  @event_time = EventTime.new
+     @location = Location.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
@@ -27,8 +27,9 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
- 
-    respond_to do |format|
+  @event_time = EventTime.new
+  @location = Location.new
+      respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
     end
@@ -37,15 +38,18 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
- 
-  end
+  @event_time = EventTime.new
+   @location = Location.new
+    end
 
   # POST /events
   # POST /events.json
   def create
     @event = Event.new(params[:event])
- 
-    respond_to do |format|
+  @event_time = EventTime.new
+   @location = Location.new
+  
+      respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
@@ -60,8 +64,9 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
-
-    respond_to do |format|
+  @event_time = EventTime.new
+   @location = Location.new
+      respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }

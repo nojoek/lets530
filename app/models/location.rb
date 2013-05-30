@@ -3,9 +3,9 @@ class Location < ActiveRecord::Base
   
   belongs_to :event
   
-  def location
-      Location.find_by_id(self.location_id)
-    end
+  # def location
+  #       Location.find_by_id(self.location_id)
+  #     end
     
     
 end
