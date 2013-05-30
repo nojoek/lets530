@@ -1,0 +1,31 @@
+<h1>Listing event_times</h1>
+
+<table class="table table-hover">
+  <tr>
+    <th>Time1</th>
+    <th>Time2</th>
+    <th>Time3</th>
+    <th>Time4</th>
+    <th>Event</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @event_times.each do |event_time| %>
+  <tr>
+    <td><%= event_time.time1 %></td>
+    <td><%= event_time.time2 %></td>
+    <td><%= event_time.time3 %></td>
+    <td><%= event_time.time4 %></td>
+    <td><%= event_time.event_id %></td>
+    <td><%= link_to 'Show', event_time %></td>
+    <td><%= link_to 'Edit', edit_event_time_path(event_time) %></td>
+    <td><%= link_to 'Destroy', event_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event time', new_event_time_path %>

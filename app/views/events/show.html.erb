@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @event.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @event.description %>
+</p>
+
+
+
+<%= render 'event_times/form' %>
+<p>
+  <b>Final destination:</b>
+  <%= @event.final_destination %>
+</p>
+
+<p>
+  <b>Final time:</b>
+  <%= @event.final_time %>
+</p>
+
+<p>
+  <b>Final location:</b>
+  <%= @event.locations  %>
+ 
+ 
+<p>
+  <b>User:</b>
+  <%= @event.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
+
