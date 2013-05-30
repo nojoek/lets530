@@ -7,7 +7,7 @@
     <th>Final destination</th>
     <th>Final time</th>
     <th>User</th>
-    <th></th>
+    <th>Location</th>
     <th></th>
     <th></th>
   </tr>
@@ -19,6 +19,7 @@
     <td><%= event.final_destination %></td>
     <td><%= event.final_time %></td>
     <td><%= event.user_id %></td>
+<td><%= event.locations[] %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

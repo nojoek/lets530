@@ -7,7 +7,7 @@
     <th>Time3</th>
     <th>Time4</th>
     <th>Event</th>
-    <th></th>
+    <th>Event ID</th>
     <th></th>
     <th></th>
   </tr>
@@ -18,7 +18,8 @@
     <td><%= event_time.time2.strftime('%l:%M %p') %></td>
     <td><%= event_time.time3.strftime('%l:%M %p') %></td>
     <td><%= event_time.time4.strftime('%l:%M %p') %></td>
-    <td><%= event_time.event.title %></td>
+    <td><%= event_time.event.title if event_time.event.present? %></td>
+<td><%= event_time.event_id %></td>
     <td><%= link_to 'Show', event_time %></td>
     <td><%= link_to 'Edit', edit_event_time_path(event_time) %></td>
     <td><%= link_to 'Destroy', event_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>

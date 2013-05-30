@@ -13,6 +13,10 @@
 <%= render 'event_times/form' %>
 <%= render 'locations/form' %>
 
+
+ 
+ 
+
 <p>
   <b>Final destination:</b>
   <%= @event.final_destination %>
@@ -27,10 +31,9 @@
   <b>Final location:</b>
   <%= @event.locations  %>
  
- 
 <p>
-  <b>User:</b>
-  <%= @event.user_id %>
+  <b>Event ID:</b>
+  <%= @event.user_id = params[:id] %>
 </p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
