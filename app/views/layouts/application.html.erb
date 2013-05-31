@@ -6,17 +6,12 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-<link rel="stylesheet" type="text/css" href="http://bootswatch.com/united/bootstrap.min.css">
-    <style type="text/css">
-      body { padding-top: 60px; padding-bottom: 40px; }
-    </style>
 
- <link href="http://bootswatch.com/cosmo/bootstrap.min.css" rel="stylesheet">
+ 
+  <link href="/stylesheets/zbootswatch.css" media="screen" rel="stylesheet" type="text/css" />
 
-    <style type="text/css">
-      .table thead th { font-size: 20px; background: #5484a7; color: white; text-align: center; height: 30px; padding: 12px; vertical-align: middle}
-      .table td { text-align: center; }
-    </style>
+
+
 
 
 </head>
@@ -41,7 +36,7 @@
 	          <ul class="nav pull-left">
 	            <li><%= link_to "Users", users_url %></li>
 	            <li><%= link_to "Events", events_url %></li>
-				<li><%= link_to "Vote", users_url %></li>
+				<li><%= link_to "Vote", votes_url %></li>
 				 <li><%= link_to "Event_Time", event_times_url %></li>
 					<li><%= link_to "Location", locations_url %></li>
 	  

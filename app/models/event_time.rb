@@ -3,6 +3,7 @@ class EventTime < ActiveRecord::Base
   
   belongs_to :event
   
+  
   # def event_time
   #      Event_time.find_by_id(self.event_time_id)
   #    end

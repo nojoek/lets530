@@ -1,4 +1,4 @@
-<h1>Listing events</h1>
+<h1>Event Listing</h1>
 
 <table class="table table-hover">
   <tr>
@@ -7,9 +7,12 @@
     <th>Final destination</th>
     <th>Final time</th>
     <th>User</th>
-    <th>Location</th>
+	<th>Location</th>
+    <th>Location1</th>
+    <th>Event Times ID</th>
+	 
     <th></th>
-    <th></th>
+<th></th>
   </tr>
 
 <% @events.each do |event| %>
@@ -19,7 +22,10 @@
     <td><%= event.final_destination %></td>
     <td><%= event.final_time %></td>
     <td><%= event.user_id %></td>
-<td><%= event.locations[] %></td>
+<td><%= event.votes %></td>
+<td><%= event.locations[0].loc1 if event.locations.present? %></td>
+<td><%= event.event_times[0] %></td>
+ 
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
