@@ -11,6 +11,14 @@
     </div>
   <% end %>
 
+
+	<div id="addNewLoc">
+		<p>
+			<input type="text" name="loc1" placeholder="Enter a Location!">
+			<a href="#" id="addNew">+</a>
+		</p>
+	</div>
+
   <div class="field">
     <%= f.label "Location Option 1" %> 
     <%= f.text_field :loc1 %>
@@ -28,7 +36,7 @@
     <%= f.text_field :loc4 %>
   </div>
   <div class="field">
-    <%= f.label " Event ID" %> 
+    <%= f.label :event_id %> 
     <%=  @event_id %>
   </div>
  

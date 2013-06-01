@@ -42,10 +42,12 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(params[:location])
-
+    @event = @location.event
+    # @event = @Location.event
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        # format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.html { redirect_to new_vote_path(event_id: @event_id), notice: 'Event was successfully created.' }
         format.json { render json: @location, status: :created, location: @location }
       else
         format.html { render action: "new" }

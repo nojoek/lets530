@@ -1,4 +1,9 @@
 class Event < ActiveRecord::Base
+
+def to_param
+  "#{id} #{title}".parameterize
+end
+
   attr_accessible :description, :final_destination, :final_time, :title, :user_id
 
 has_many :locations

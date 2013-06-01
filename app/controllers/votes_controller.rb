@@ -27,6 +27,9 @@ class VotesController < ApplicationController
     @vote = Vote.new
     @location = Location.new
     @event_time = EventTime.new
+    # @event_id = params[:event_id]
+    
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @vote }
