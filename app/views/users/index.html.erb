@@ -4,17 +4,21 @@
   <tr>
 	<th>User ID</th>
     <th>Email</th>
-    <th>Event ID</th>
-    <th></th>
+    <th>Event Names</th>
+    <th> </th>
 <th></th>
     <th></th>
   </tr>
-
+#how we make these in diff columns
 <% @users.each do |user| %>
   <tr>
 	<td><%= user.id %></td>
     <td><%= user.email %></td>
-<td><%= user.events if user.events.present? %></td>
+    <td>   
+		<% user.events.each do |cray| %>
+			<%=	cray.title %>  
+		<% end %>	
+	</td> 
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

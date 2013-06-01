@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @event_time = EventTime.new
-     @location = Location.new
+    @location = Location.new
+    @user = User.new  ####is this right?
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
