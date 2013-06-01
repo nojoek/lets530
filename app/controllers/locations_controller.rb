@@ -25,6 +25,7 @@ class LocationsController < ApplicationController
   # GET /locations/new.json
   def new
     @location = Location.new
+    @event_id = params[:event_id]
 
     respond_to do |format|
       format.html # new.html.erb

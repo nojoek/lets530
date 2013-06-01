@@ -48,12 +48,10 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
-  @event_time = EventTime.new
-   @location = Location.new
   
       respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to new_event_time_path(event_id: @event.id), notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
         format.html { render action: "new" }

@@ -28,6 +28,11 @@
     <%= f.time_select :time4, :default => 5.hours.from_now, :minute_step => 15, :ampm => true %>
   </div>
    
+<div class="field">
+    <%= f.label "Event ID:" %> 
+    <%= @event_id  %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

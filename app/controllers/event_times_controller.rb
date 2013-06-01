@@ -25,6 +25,7 @@ class EventTimesController < ApplicationController
   # GET /event_times/new.json
   def new
     @event_time = EventTime.new
+@event_id = params[:event_id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +45,8 @@ class EventTimesController < ApplicationController
 
     respond_to do |format|
       if @event_time.save
-        format.html { redirect_to @event_time, notice: 'Event time was successfully created.' }
+        # format.html { redirect_to @event_time, notice: 'Event time was successfully created.' }
+            format.html { redirect_to new_location_path(event_id: @event_id), notice: 'Event was successfully created.' }
         format.json { render json: @event_time, status: :created, location: @event_time }
       else
         format.html { render action: "new" }
