@@ -25,8 +25,8 @@ class VotesController < ApplicationController
   # GET /votes/new.json
   def new
     @vote = Vote.new
-    @locations = Location.new
-    @event_times = Event_Times.new
+    @location = Location.new
+    @event_time = EventTime.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @vote }
@@ -43,7 +43,7 @@ class VotesController < ApplicationController
   # POST /votes.json
   def create
     @vote = Vote.new(params[:vote])
-     
+      @event_times = EventTime.new #where does this go and why?
     respond_to do |format|
       if @vote.save
         format.html { redirect_to @vote, notice: 'Vote was successfully created.' }

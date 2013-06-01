@@ -29,6 +29,7 @@ class EventsController < ApplicationController
     @event = Event.new
   @event_time = EventTime.new
   @location = Location.new
+  # @location_id = LocationId.new
       respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }

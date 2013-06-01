@@ -1,6 +1,6 @@
 Lets530::Application.routes.draw do
   
-  root to: 'users#new'
+  root to: 'Events#new'
   
   resources :users
 

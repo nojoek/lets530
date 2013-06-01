@@ -1,25 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Time Option1:</b>
-  <%= @event_time.time1 %>
-</p>
-
-<p>
-  <b>Time Option 2:</b>
-  <%= @event_time.time2 %>
-</p>
-
-<p>
-  <b>Time Option 3:</b>
-  <%= @event_time.time3 %>
-</p>
-
-<p>
-  <b>Time Option 4:</b>
-  <%= @event_time.time4 %>
-</p>
-
+<table class="table table-hover">
+	<tr>
+    <th>Time Option1</th>
+    <th>Time Option2</th>
+    <th>Time Option3</th>
+    <th>Time Option4</th>
+    <th>Event</th>
+    <th></th>
+  	 
+</tr>
+<tr>
+<td>
+  <%= @event_time.time1.strftime('%l:%M %p')  %>
+ </td>
+ <td>
+  <%= @event_time.time2.strftime('%l:%M %p')  %>
+</td>
+<td>
+  <%= @event_time.time3.strftime('%l:%M %p')  %>
+</td>
+<td>
+  <%= @event_time.time4.strftime('%l:%M %p')  %>
+</td>
+<td>
+	<%= @event_time.event.title%>
+	</td>
+</tr>
+</table>
 
 <%= link_to 'Edit', edit_event_time_path(@event_time) %> |
 <%= link_to 'Back', event_times_path %>
