@@ -28,6 +28,7 @@ class VotesController < ApplicationController
     # @location = Location.all
     @event_time = EventTime.new
     @vote.event_id = params[:event_id]
+    @voteinfo 
     
     
     respond_to do |format|
