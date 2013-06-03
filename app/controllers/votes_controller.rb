@@ -25,9 +25,9 @@ class VotesController < ApplicationController
   # GET /votes/new.json
   def new
     @vote = Vote.new
-    @location = Location.new
+    # @location = Location.all
     @event_time = EventTime.new
-    # @event_id = params[:event_id]
+    @vote.event_id = params[:event_id]
     
     
     respond_to do |format|

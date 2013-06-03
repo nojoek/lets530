@@ -6,7 +6,7 @@
     <th>Event time</th>
     <th>User</th>
     <th>Event</th>
-    <th></th>
+    <th>token</th>
     <th></th>
     <th></th>
   </tr>
@@ -17,6 +17,7 @@
     <td><%= vote.event_time_id %></td>
     <td><%= vote.user_id %></td>
     <td><%= vote.event_id %></td>
+	<td><%= vote.token %></td>
     <td><%= link_to 'Show', vote %></td>
     <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
     <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>

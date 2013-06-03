@@ -51,6 +51,13 @@ class EventsController < ApplicationController
   
       respond_to do |format|
       if @event.save
+      #      
+      #     # totalvotes =5
+      #     #        
+      #     #         totalvotes.each do 
+      #      Vote.create(:event_id => @event.id)
+         
+        
         format.html { redirect_to new_event_time_path(event_id: @event.id), notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
@@ -58,14 +65,15 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
-  end
+  end  
+   
 
   # PUT /events/1
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
-  @event_time = EventTime.new
-   @location = Location.new
+    @event_time = EventTime.new
+    @location = Location.new
       respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -89,3 +97,5 @@ class EventsController < ApplicationController
     end
   end
 end
+
+

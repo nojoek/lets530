@@ -12,16 +12,16 @@
 </tr>
 <tr>
 <td>
-  <%= @event_time.time1.strftime('%l:%M %p')  %>
+  <%= @event_time.time1.strftime('%l:%M %p')  if @event_time.time1.present? %>
  </td>
  <td>
-  <%= @event_time.time2.strftime('%l:%M %p')  %>
+  <%= @event_time.time2.strftime('%l:%M %p')   if @event_time.time2.present?%>
 </td>
 <td>
-  <%= @event_time.time3.strftime('%l:%M %p')  %>
+  <%= @event_time.time3.strftime('%l:%M %p')  if @event_time.time3.present? %>
 </td>
 <td>
-  <%= @event_time.time4.strftime('%l:%M %p')  %>
+  <%= @event_time.time4.strftime('%l:%M %p')   if @event_time.time4.present?%>
 </td>
 <td>
 	<%= @event_id %>

@@ -16,10 +16,10 @@
 
 <% @event_times.each do |event_time| %>
   <tr>
-    <td><%= event_time.time1.strftime('%l:%M %p') %></td>
-    <td><%= event_time.time2.strftime('%l:%M %p') %></td>
-    <td><%= event_time.time3.strftime('%l:%M %p') %></td>
-    <td><%= event_time.time4.strftime('%l:%M %p') %></td>
+    <td><%= event_time.time1.strftime('%l:%M %p') if event_time.time1.present? %></td>
+    <td><%= event_time.time2.strftime('%l:%M %p')  if event_time.time1.present?%></td> 
+    <td><%= event_time.time3.strftime('%l:%M %p') if event_time.time1.present? %></td>
+    <td><%= event_time.time4.strftime('%l:%M %p')  if event_time.time1.present?%></td>
     <td><%= event_time.event.title if event_time.event.present? %></td>
 <td><%= event_time.event_id %></td>
     <td><%= link_to 'Show', event_time %></td>
