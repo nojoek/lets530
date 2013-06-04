@@ -11,55 +11,61 @@
     </div>
   <% end %>
  
-  <div class="field">
+  <div class="Timefield">
     <%= f.label "Time Option 1" %>
-	
-    <%= @eventhere.event_times[0].time1 %>  
-  </div>
+	<%= f.radio_button :event_times, @eventhere.locations %>
+    <%= @eventhere.event_times[0].time1.strftime('%l:%M %p')  %>  
+  </div></br>
 
-<div class="field">
+
+<div class="Timefield">
     <%= f.label "Time Option 2" %>
+<%= f.radio_button :event_times, @eventhere.locations %>
+    <%= @eventhere.event_times[0].time2.strftime('%l:%M %p')  %>  
+  </div></br>
 
-    <%= @eventhere.event_times[0].time2 %>  
-  </div>
-
-<div class="field">
+<div class="Timefield">
     <%= f.label "Time Option 3"%>
+<%= f.radio_button :event_times, @eventhere.locations %>
 
-    <%= @eventhere.event_times[0].time3 %>  
-  </div>
+<!-- @eventhere.locations.each do |locale|
+	f.label :location, locale.loc1
+	f.radio_button :location, locale.id
+end -->
 
-<div class="field">
+    <%= @eventhere.event_times[0].time3.strftime('%l:%M %p')  %>  
+  </div></br>
+
+<div class="Timefield">
     <%= f.label "Time Option 4" %>
-   
-    <%= @eventhere.event_times[0].time4 %>  
-  </div>
+   <%= f.radio_button :event_times, @eventhere.locations %>
+    <%= @eventhere.event_times[0].time4.strftime('%l:%M %p')  %>  
+  </div></br>
 
 
-
-<div class="field">
+<div class="Locationfield">
     <%= f.label "Location Option 1" %>
-
+<%= f.radio_button :locations, @eventhere.locations %>
     <%= @eventhere.locations[0].loc1 %>  
-  </div>
+  </div></br>
 
-<div class="field">
+<div class="Locationfield">
     <%= f.label "Location Option 2" %>
-
+<%= f.radio_button :locations, @eventhere.locations %>
     <%= @eventhere.locations[0].loc2 %>  
-  </div>
+  </div></br>
 
-<div class="field">
+<div class="Locationfield">
     <%= f.label "Location Option 3" %>
-
+<%= f.radio_button :locations, @eventhere.locations %>
     <%= @eventhere.locations[0].loc3 %>  
-  </div>
+  </div></br>
 
-<div class="field">
+<div class="Locationfield">
     <%= f.label "Location Option 4" %>
-
+<%= f.radio_button :locations, @eventhere.locations %>
     <%= @eventhere.locations[0].loc4 %>  
-  </div>
+  </div></br>
 
 
 
@@ -67,11 +73,7 @@
     <%= f.label :user_id %>
     <%= f.number_field :user_id %>
   </div>
-
- <div class="field">
-    <%= f.label :event_id %> 
-    <%= f.number_field :event_id %>
-  </div>
+ 
   <div class="field">
     <%= f.label :event_id %>
     <%= f.number_field :event_id %>

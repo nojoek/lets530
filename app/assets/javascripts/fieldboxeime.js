@@ -17,6 +17,8 @@ $(function() {
         });
 
 });
+
+// $(element).next().show()
 // 
 // 
 // $(function() {

@@ -49,6 +49,7 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
       @event_times = EventTime.new #where does this go and why?
+      
     respond_to do |format|
       if @vote.save
         format.html { redirect_to @vote, notice: 'Vote was successfully created.' }

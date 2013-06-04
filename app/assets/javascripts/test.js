@@ -18,3 +18,11 @@ $(function() {
         });
 
 });
+
+$():onclick => "field hidden-input.hide();return false"
+
+
+$('.hidden-input').show();
+{
+<div class=​"field hidden-input" style>​…​</div>​
+};
