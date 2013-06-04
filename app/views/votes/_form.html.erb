@@ -10,12 +10,57 @@
       </ul>
     </div>
   <% end %>
-
  
   <div class="field">
-    <%= f.label :event_time_id %>
-    <%= f.number_field @voteinfo %>
+    <%= f.label "Time Option 1" %>
+	
+    <%= @eventhere.event_times[0].time1 %>  
   </div>
+
+<div class="field">
+    <%= f.label "Time Option 2" %>
+
+    <%= @eventhere.event_times[0].time2 %>  
+  </div>
+
+<div class="field">
+    <%= f.label "Time Option 3"%>
+
+    <%= @eventhere.event_times[0].time3 %>  
+  </div>
+
+<div class="field">
+    <%= f.label "Time Option 4" %>
+   
+    <%= @eventhere.event_times[0].time4 %>  
+  </div>
+
+
+
+<div class="field">
+    <%= f.label "Location Option 1" %>
+
+    <%= @eventhere.locations[0].loc1 %>  
+  </div>
+
+<div class="field">
+    <%= f.label "Location Option 2" %>
+
+    <%= @eventhere.locations[0].loc2 %>  
+  </div>
+
+<div class="field">
+    <%= f.label "Location Option 3" %>
+
+    <%= @eventhere.locations[0].loc3 %>  
+  </div>
+
+<div class="field">
+    <%= f.label "Location Option 4" %>
+
+    <%= @eventhere.locations[0].loc4 %>  
+  </div>
+
 
 
   <div class="field">
@@ -24,8 +69,8 @@
   </div>
 
  <div class="field">
-    <%= f.label :location_id %> 
-    <%= f.number_field :event_id%>
+    <%= f.label :event_id %> 
+    <%= f.number_field :event_id %>
   </div>
   <div class="field">
     <%= f.label :event_id %>

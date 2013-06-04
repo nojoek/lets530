@@ -14,4 +14,6 @@ class Vote < ActiveRecord::Base
   #    self.token = SecureRandom.uuid
   # end
   
+  
+  
 end

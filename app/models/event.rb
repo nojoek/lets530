@@ -11,6 +11,6 @@ has_many :event_times
 has_many :votes
 belongs_to :user  ####belongs to or has many?
 
- 
+ # @events = Event.order("count DESC")
   
 end

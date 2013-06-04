@@ -4,7 +4,7 @@ $(function() {
 
 	 $('#addNew').on('click', function() {
                 if(i<=4){
-                        $('<p><input type="time" name="loc' + i +'" value="" placeholder="Enter Another Option!"><a href="#" class="remNew">Remove</a> </p>').appendTo(addDiv);
+                        $('<p><input type="time" name="time1' + i +'" value="" placeholder="Enter Another Option!"><a href="#" class="remNew">Remove</a> </p>').appendTo(addDiv);
                         i++;
                 // return false;
                         $('.remNew').on('click', function() { 

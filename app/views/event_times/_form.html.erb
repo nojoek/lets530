@@ -13,7 +13,7 @@
 
  	<div id="addNewTime">
 		<p>
-			<input type="time" name="Time" placeholder="One option will set the time">
+			<input type="time" name="time1" placeholder="One option will set the time">
 			<a href="#" id="addNew">+</a>
 		</p>
 	</div>
@@ -55,24 +55,11 @@
 			</div> -->
 
 
+			<div class="field">
+			  <%= f.label "Time Option 2" %>
+			  <%= f.time_select :time2, :default => 3.hours.from_now, :minute_step => 15, :ampm => true %>
+			</div>
 
-
-  <div class="addNewLoc">
-    <%= f.label "Time Option 1" %>
-    <%= f.time_select :time1, :default => 2.hours.from_now, :minute_step => 15, :ampm => true  %>
-  </div>
-  <div class="field">
-    <%= f.label "Time Option 2" %>
-    <%= f.time_select :time2, :default => 3.hours.from_now, :minute_step => 15, :ampm => true %>
-  </div>
-  <div class="field">
-    <%= f.label "Time Option 3" %> 
-    <%= f.time_select :time3, :default => 4.hours.from_now, :minute_step => 15, :ampm => true %>
-  </div>
-  <div class="field">
-    <%= f.label "Time Option 4" %> 
-    <%= f.time_select :time4, :default => 5.hours.from_now, :minute_step => 15, :ampm => true %>
-  </div>
    
 <div class="field">
     <%= f.label :event_id %>

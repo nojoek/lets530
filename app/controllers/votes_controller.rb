@@ -28,8 +28,9 @@ class VotesController < ApplicationController
     # @location = Location.all
     @event_time = EventTime.new
     @vote.event_id = params[:event_id]
-    @voteinfo 
-    
+    @v = EventTime.all
+    @eventhere = Event.find_by_id(params[:event_id])
+  
     
     respond_to do |format|
       format.html # new.html.erb
