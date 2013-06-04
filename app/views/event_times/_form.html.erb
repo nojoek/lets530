@@ -53,34 +53,34 @@
 			<!-- <a href="#" id="addNew">+</a>
 				</p>
 			</div> -->
-
+			 
 
 			<div class="field">
 			  <%= f.label "Time Option 1" %>
-			  <%= f.time_select :time1, :default => 3.hours.from_now, :minute_step => 15, :ampm => true %>
+			  <%= f.time_select :time1, :default => -4.hours.from_now, :minute_step => 15, :ampm => true %>
 			</div>
 			
 			<div class="field">
 			  <%= f.label "Time Option 2" %>
-			  <%= f.time_select :time2, :default => 4.hours.from_now, :minute_step => 15, :ampm => true %>
+			  <%= f.time_select :time2, :default => -3.hours.from_now, :minute_step => 15, :ampm => true %>
 			</div>
 			
 
    				<div class="field">
 				  <%= f.label "Time Option 3" %>
-				  <%= f.time_select :time3, :default => 5.hours.from_now, :minute_step => 15, :ampm => true %>
+				  <%= f.time_select :time3, :default => -2.hours.from_now, :minute_step => 15, :ampm => true %>
 				</div>
 				
 					<div class="field">
 					  <%= f.label "Time Option 4" %>
-					  <%= f.time_select :time4, :default => 6.hours.from_now, :minute_step => 15, :ampm => true %>
+					  <%= f.time_select :time4, :default => -1.hours.from_now, :minute_step => 15, :ampm => true %>
 					</div>
 					
 					
 <div class="field">
-    <%= f.label :event_id %>
+    <%= f.hidden_field :event_id %>
 	<%= f.hidden_field :event_id %>
-    <%= @event_id  %>
+     
   </div>
 
   <div class="actions">

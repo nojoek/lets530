@@ -13,58 +13,58 @@
  
   <div class="Timefield">
     <%= f.label "Time Option 1" %>
-	<%= f.radio_button :event_times, @eventhere.locations %>
-    <%= @eventhere.event_times[0].time1.strftime('%l:%M %p')  %>  
+	<%= f.radio_button :event_times, @eventhere.event_times %>
+   <b> <%= @eventhere.event_times[0].time1.strftime('%l:%M %p')  %>  </b>
   </div></br>
 
 
 <div class="Timefield">
     <%= f.label "Time Option 2" %>
-<%= f.radio_button :event_times, @eventhere.locations %>
-    <%= @eventhere.event_times[0].time2.strftime('%l:%M %p')  %>  
+<%= f.radio_button :event_times, @eventhere.event_times %>
+   <b> <%= @eventhere.event_times[0].time2.strftime('%l:%M %p')  %>  </b>
   </div></br>
 
 <div class="Timefield">
     <%= f.label "Time Option 3"%>
-<%= f.radio_button :event_times, @eventhere.locations %>
+<%= f.radio_button :event_times, @eventhere.event_times %>
 
 <!-- @eventhere.locations.each do |locale|
 	f.label :location, locale.loc1
 	f.radio_button :location, locale.id
 end -->
 
-    <%= @eventhere.event_times[0].time3.strftime('%l:%M %p')  %>  
+    <b><%= @eventhere.event_times[0].time3.strftime('%l:%M %p')  %> </b> 
   </div></br>
 
 <div class="Timefield">
     <%= f.label "Time Option 4" %>
-   <%= f.radio_button :event_times, @eventhere.locations %>
-    <%= @eventhere.event_times[0].time4.strftime('%l:%M %p')  %>  
+   <%= f.radio_button :event_times, @eventhere.event_times %>
+   <b> <%= @eventhere.event_times[0].time4.strftime('%l:%M %p')  %> </b> 
   </div></br>
 
 
 <div class="Locationfield">
     <%= f.label "Location Option 1" %>
-<%= f.radio_button :locations, @eventhere.locations %>
-    <%= @eventhere.locations[0].loc1 %>  
+<%= f.radio_button :locations, @eventhere.locations %> 
+  <b>  <%= @eventhere.locations[0].loc1 %> </b> 
   </div></br>
 
 <div class="Locationfield">
     <%= f.label "Location Option 2" %>
 <%= f.radio_button :locations, @eventhere.locations %>
-    <%= @eventhere.locations[0].loc2 %>  
+  <b>  <%= @eventhere.locations[0].loc2 %>  </b>
   </div></br>
 
 <div class="Locationfield">
     <%= f.label "Location Option 3" %>
 <%= f.radio_button :locations, @eventhere.locations %>
-    <%= @eventhere.locations[0].loc3 %>  
+   <b> <%= @eventhere.locations[0].loc3 %>  </b>
   </div></br>
 
 <div class="Locationfield">
     <%= f.label "Location Option 4" %>
 <%= f.radio_button :locations, @eventhere.locations %>
-    <%= @eventhere.locations[0].loc4 %>  
+  <b>  <%= @eventhere.locations[0].loc4 %>  </b>
   </div></br>
 
 
@@ -75,8 +75,8 @@ end -->
   </div>
  
   <div class="field">
-    <%= f.label :event_id %>
-    <%= f.number_field :event_id %>
+    <%= f.hidden_field :event_id %>
+    <%= f.hidden_field :event_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
