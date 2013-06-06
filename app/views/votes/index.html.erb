@@ -13,8 +13,8 @@
 
 <% @votes.each do |vote| %>
   <tr>
-    <td><%= vote.location_id %></td>
-    <td><%= vote.event_time_id %></td>
+    <td><%= vote.event_location_column %></td>
+    <td><%= vote.event_time_column %></td>
     <td><%= vote.user_id %></td>
     <td><%= vote.event_id %></td>
 	<td><%= vote.token %></td>
@@ -26,5 +26,4 @@
 </table>
 
 <br />
-
-<%= link_to 'New Vote', new_vote_path %>
+ 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605182820) do
+ActiveRecord::Schema.define(:version => 20130606191240) do
 
   create_table "event_times", :force => true do |t|
     t.time     "time1"

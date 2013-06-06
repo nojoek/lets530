@@ -5,7 +5,7 @@
     <th>Description</th>
     <th>Title</th>
     <th>Destination</th>
-    <th>Final time</th>
+    <th>Final Time</th>
     <th>User</th>
 	<th>Vote Count</th>
     <th></th>
@@ -17,7 +17,7 @@
   <tr>
     <td><%= event.description %></td>
     <td><%= event.title %></td>
-    <td><%= event.final_destination %></td>
+    <td><%= event.votes %></td>
     <td><%= event.final_time %></td>
     <td><%= event.user_id if event.user_id.present? %></td>
 	<td><%= event.votes.count %></td>
