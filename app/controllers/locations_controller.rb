@@ -43,6 +43,13 @@ class LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
+    raise params.inspect
+    params[:location].each do |locale|
+      location = Location.new
+      location.event_id = locale[:event_id]
+      location.name = locale[:name]
+      location.save
+    end
     @location = Location.new(params[:location])
     @event = @location.event
    

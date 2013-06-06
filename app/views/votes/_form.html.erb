@@ -34,7 +34,7 @@
 
 	<div class="Locationfield">
     <%= f.label "Location Option 1" %>
-	<%= f.radio_button :event_location_column, "loc1" %> 
+	<%= f.radio_button :event_location_column, @eventhere.location.loc1 %> 
   	<b>  <%= @eventhere.location.loc1 %> </b> </br>
    
    <br> <%= f.label "Location Option 2" %>

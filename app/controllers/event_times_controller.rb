@@ -43,6 +43,7 @@ class EventTimesController < ApplicationController
   # POST /event_times
   # POST /event_times.json
   def create
+    # raise params.inspect
     @event_time = EventTime.new(params[:event_time])
     @event = @event_time.event
     respond_to do |format|

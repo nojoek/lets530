@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130606191240) do
+ActiveRecord::Schema.define(:version => 20130606201448) do
 
   create_table "event_times", :force => true do |t|
     t.time     "time1"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(:version => 20130606191240) do
     t.time     "time3"
     t.time     "time4"
     t.integer  "event_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.time     "time_description"
   end
 
   create_table "events", :force => true do |t|
@@ -42,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130606191240) do
     t.integer  "event_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   create_table "users", :force => true do |t|
