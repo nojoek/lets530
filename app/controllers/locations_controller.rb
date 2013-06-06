@@ -28,6 +28,7 @@ class LocationsController < ApplicationController
     @event_id = params[:event_id]
     @location.event_id = @event_id
     @event_time = EventTime.new
+  
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,26 +44,28 @@ class LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
-    raise params.inspect
+    # raise params.inspect
     params[:location].each do |locale|
       location = Location.new
       location.event_id = locale[:event_id]
       location.name = locale[:name]
       location.save
     end
-    @location = Location.new(params[:location])
-    @event = @location.event
+
+    redirect_to new_vote_path(event_id: params[:event_id]), notice: 'Event was successfully created.'
+    # @location = Location.new(params[:location])
+    # @event = @location.event
    
-    respond_to do |format|
-      if @location.save
+    # respond_to do |format|
+      # if @location.save
         # format.html { redirect_to @location, notice: 'Location was successfully created.' }
-        format.html { redirect_to new_vote_path(event_id: @event.id), notice: 'Event was successfully created.' }
-        format.json { render json: @location, status: :created, location: @location }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
-      end
-    end
+        # format.html { redirect_to new_vote_path(event_id: @event.id), notice: 'Event was successfully created.' }
+        # format.json { render json: @location, status: :created, location: @location }
+      # else
+        # format.html { render action: "new" }
+        # format.json { render json: @location.errors, status: :unprocessable_entity }
+      # end
+    # end
   end
 
   # PUT /locations/1

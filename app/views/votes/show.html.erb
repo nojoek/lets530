@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 <p>
   <b>Location:</b>
-  <%= @vote.event_location_column %>
+  <%= @vote.location.name %>
 </p>
 <p>
   <b>Event time:</b>
-  <%= @vote.event_time_column %>
+  <%= @vote.event_time.time_description %>
 </p>
 <p>
   <b>User:</b>

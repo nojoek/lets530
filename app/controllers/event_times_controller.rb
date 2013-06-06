@@ -28,6 +28,8 @@ class EventTimesController < ApplicationController
     @event_id = params[:event_id]
     @event_time.event_id = @event_id
     @location = Location.new
+  
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,22 +45,29 @@ class EventTimesController < ApplicationController
   # POST /event_times
   # POST /event_times.json
   def create
-    # raise params.inspect
-    @event_time = EventTime.new(params[:event_time])
-    @event = @event_time.event
-    respond_to do |format|
-      if @event_time.save
-        # format.html { redirect_to @event_time, notice: 'Event time was successfully created.' }
-        format.html { redirect_to new_location_path(event_id: @event.id), notice: 'Event was successfully created.' }
-      # format.html { redirect_to new_event_time_path(event_id: @event.id), notice: 'Event was successfully created.' }
-        format.json { render json: @event, status: :created, location: @event }
-        format.json { render json: @event_time, status: :created, location: @event_time }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @event_time.errors, status: :unprocessable_entity }
+      # raise params.inspect
+      params[:event_time].each do |clock|
+        event_time = EventTime.new
+        event_time.event_id = clock[:event_id]
+        event_time.time_description = Time.parse(clock[:time_description])
+        event_time.save
       end
+           # @event_time = EventTime.new(params[event])
+           # @location = @event_time.event
+    redirect_to new_location_path(event_id: params[:event_id]), notice: 'Event was successfully created.' 
+    # respond_to do |format|
+      # if @event_time.save
+        # format.html { redirect_to @event_time, notice: 'Event time was successfully created.' }
+        # format.html { redirect_to new_location_path(event_id: @event.id), notice: 'Event was successfully created.' }
+      # format.html { redirect_to new_event_time_path(event_id: @event.id), notice: 'Event was successfully created.' }
+        # format.json { render json: @event, status: :created, location: @event }
+        # format.json { render json: @event_time, status: :created, location: @event_time }
+      # else
+        # format.html { render action: "new" }
+        # format.json { render json: @event_time.errors, status: :unprocessable_entity }
+      # end
     end
-  end
+   
 
   # PUT /event_times/1
   # PUT /event_times/1.json
@@ -88,3 +97,4 @@ class EventTimesController < ApplicationController
     end
   end
 end
+ # end
