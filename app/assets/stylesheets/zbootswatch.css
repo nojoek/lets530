@@ -16,7 +16,7 @@
 
 .clearfix:before,
 .clearfix:after {
-  display: table;
+  display: ;
   line-height: 0;
   content: "";
 }

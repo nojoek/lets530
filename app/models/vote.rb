@@ -1,13 +1,13 @@
 
 
 class Vote < ActiveRecord::Base
-  attr_accessible :event_id, :event_time_id, :location_id, :user_id, :locations, :event_times, :token
+  attr_accessible :event_id, :event_time_id, :location_id, :user_id, :location, :event_time, :event_time_column, :event_location_column, :token
   
   # after_initialize :set_uuid
   
-  belongs_to :locations
-  belongs_to :event_times
-  belongs_to :users
+  has_many :locations
+  has_many :event_times
+  belongs_to :user
   belongs_to :event
   
   # def set_uuid

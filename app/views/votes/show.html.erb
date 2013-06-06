@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 <p>
   <b>Location:</b>
-  <%= @vote.location_id %>
+  <%= @vote.event_location_column %>
 </p>
 <p>
   <b>Event time:</b>
-  <%= @vote.event_time_id %>
+  <%= @vote.event_time_column %>
 </p>
 <p>
   <b>User:</b>
@@ -15,7 +15,6 @@
   <b>Event:</b>
   <%= @vote.event_id %>
 </p>
-
 
 <%= link_to 'Edit', edit_vote_path(@vote) %> |
 <%= link_to 'Back', votes_path %>

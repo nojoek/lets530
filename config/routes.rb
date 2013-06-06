@@ -9,6 +9,7 @@ Lets530::Application.routes.draw do
 
 
   resources :event_times
+  
 
 
   resources :locations

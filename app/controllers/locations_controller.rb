@@ -25,7 +25,9 @@ class LocationsController < ApplicationController
   # GET /locations/new.json
   def new
     @location = Location.new
-    @location.event_id = params[:event_id]
+    @event_id = params[:event_id]
+    @location.event_id = @event_id
+    @event_time = EventTime.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,8 +45,7 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new(params[:location])
     @event = @location.event
-     
-     
+   
     respond_to do |format|
       if @location.save
         # format.html { redirect_to @location, notice: 'Location was successfully created.' }
