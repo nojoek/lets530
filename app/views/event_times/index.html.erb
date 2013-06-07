@@ -2,12 +2,11 @@
 
 <table class="table table-hover">
   <tr>
-    <th>Time1</th>
+    <th>Time Descr</th>
     <th>Time2</th>
-    <th>Time3</th>
-    <th>Time4</th>
+     
     <th>Event</th>
-    <th>Event ID</th>
+    <th> </th>
     <th></th>
     <th></th>
 	<th></th>
@@ -16,10 +15,9 @@
 
 <% @event_times.each do |event_time| %>
   <tr>
-    <td><%= event_time.time1.strftime('%l:%M %p') if event_time.time1.present? %></td>
-    <td><%= event_time.time2.strftime('%l:%M %p')  if event_time.time2.present?%></td> 
-    <td><%= event_time.time3.strftime('%l:%M %p') if event_time.time3.present? %></td>
-    <td><%= event_time.time4.strftime('%l:%M %p')  if event_time.time4.present?%></td>
+    <td><%= event_time.time_description.strftime('%l:%M %p') %></td>
+    <td>   </td> 
+  
     <td><%= event_time.event.title if event_time.event.present? %></td>
 <td><%= event_time.event_id %></td>
     <td><%= link_to 'Show', event_time %></td>

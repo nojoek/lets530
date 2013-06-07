@@ -15,9 +15,14 @@
   <%= @event.final_time %>
 </p>
 <p>
-  <b>Final location:</b>
-  <%= @event.location.id %>
+  <b>Event ID:</b>
+ <%=@event.id %>
 </p>
+
+ <b>Location Options:</b>
+ 
+</p>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
