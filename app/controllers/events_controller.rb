@@ -76,6 +76,7 @@ class EventsController < ApplicationController
     @location = Location.new
       respond_to do |format|
       if @event.update_attributes(params[:event])
+        # redirect_to event_time_url
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
