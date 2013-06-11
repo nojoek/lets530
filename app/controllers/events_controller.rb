@@ -18,6 +18,8 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   @event_time = EventTime.new
      @location = Location.new
+     @location_votes = @event.votes.count(group: :location_id)
+     @event_time_votes = @event.votes.count(group: :event_time_id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }
@@ -48,16 +50,16 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(params[:event])
-  
+
       respond_to do |format|
       if @event.save
-      #      
+      #
       #     # totalvotes =5
-      #     #        
-      #     #         totalvotes.each do 
+      #     #
+      #     #         totalvotes.each do
       #      Vote.create(:event_id => @event.id)
-         
-        
+
+
         format.html { redirect_to new_event_time_path(event_id: @event.id), notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
@@ -65,8 +67,8 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
-  end  
-   
+  end
+
 
   # PUT /events/1
   # PUT /events/1.json

@@ -1,14 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
+<%= render 'details' %>
 
 <p>
   <b>Final time:</b>
@@ -20,8 +13,24 @@
 </p>
 
  <b>Location Options:</b>
- 
+
 </p>
+
+<p>
+  Location Votes:<br>
+  <% @location_votes.each do |loc_vote, count| %>
+   <%= Location.find(loc_vote).name %> (<%= count %>)
+  <% end %>
+<br>
+  Event Time Votes:<br>
+  <% @event_time_votes.each do |time_vote, count| %>
+   <%= EventTime.find(time_vote).time_description %> (<%= count %>)
+  <% end %>
+
+</p>
+
+<%= link_to 'Vote Now!!!', new_vote_path(event_id: @event.id) %><br>
+<%= new_vote_path(event_id: @event.id) %><br>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

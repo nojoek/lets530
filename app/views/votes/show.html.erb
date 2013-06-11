@@ -7,17 +7,20 @@
   <b>Event time:</b>
   <%= @vote.event_time.time_description.strftime('%l:%M %p')  %>
 </p>
-<p>
+<!-- <p>
   <b>User:</b>
   <%= @vote.user_id %>
 </p>
 <p>
   <b>Event:</b>
   <%= @vote.event_id %>
-</p>
+</p> -->
 
 <p>
-  <b>Email:</b>
+  <div class="field">
+    <%#= hidden_field_tag :event_id %>
+  <%= hidden_field_tag 'event_id', params[:event_id] %>
+  </div> </b>
   <%= @vote.token %>
 </p>
 
@@ -25,7 +28,7 @@
   </div>
 
 
- 
+
 
    <!-- edit_vote_path(@vote) > -->
 <%= link_to 'Back', votes_path %>
