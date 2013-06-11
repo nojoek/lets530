@@ -9,18 +9,20 @@
   <b>Description:</b>
   <%= @event.description %>
 </p>
-<p>
-  <b>Final destination:</b>
-  <%= @event.final_destination %>
-</p>
+
 <p>
   <b>Final time:</b>
   <%= @event.final_time %>
 </p>
 <p>
-  <b>Final location:</b>
-  <%= @event.locations%>
+  <b>Event ID:</b>
+ <%=@event.id %>
 </p>
+
+ <b>Location Options:</b>
+ 
+</p>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

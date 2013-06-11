@@ -5,8 +5,10 @@ class Vote < ActiveRecord::Base
   
   # after_initialize :set_uuid
   
-  has_many :locations
-  has_many :event_times
+  # has_many :locations
+  # has_many :event_times
+  belongs_to :location
+  belongs_to :event_time
   belongs_to :user
   belongs_to :event
   

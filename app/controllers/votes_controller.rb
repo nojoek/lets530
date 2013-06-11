@@ -47,7 +47,7 @@ class VotesController < ApplicationController
   # POST /votes.json
   def create
     @vote = Vote.new(params[:vote])
-    @event_times = EventTime.new #where does this go and why?
+    # @event_times = EventTime.new #where does this go and why?
       
     respond_to do |format|
       if @vote.save

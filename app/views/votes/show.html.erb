@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 <p>
   <b>Location:</b>
-  <%= @vote.event_location_column %>
+  <%= @vote.location.name %>
 </p>
 <p>
   <b>Event time:</b>
-  <%= @vote.event_time_column %>
+  <%= @vote.event_time.time_description %>
 </p>
 <p>
   <b>User:</b>
@@ -15,6 +15,9 @@
   <b>Event:</b>
   <%= @vote.event_id %>
 </p>
+
+Enter your email to be notified when Voting is closed
+Email Address:
 
 <%= link_to 'Edit', edit_vote_path(@vote) %> |
 <%= link_to 'Back', votes_path %>
