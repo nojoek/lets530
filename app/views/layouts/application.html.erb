@@ -7,18 +7,18 @@
   <%= csrf_meta_tags %>
 
 
- 
-  <link href="/stylesheets/zbootswatch.css" media="screen" rel="stylesheet" type="text/css" />
+
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="/javascripts/fieldboxes.js"></script>
 
-<link href="/stylesheets/skeleton.css" media="screen" rel="stylesheet" type="text/css" />
-
+<!-- link href="/stylesheets/skeleton.css" media="screen" rel="stylesheet" type="text/css" />
+ <link href="/stylesheets/zbootswatch.css" media="screen" rel="stylesheet" type="text/css" /> -->
 
 
 </head>
 <body>
-	
+
 	<div class="navbar navbar-fixed-top">
 	    <div class="navbar-inner">
 	      <div class="container">
@@ -41,7 +41,7 @@
 				<li><%= link_to "Vote", votes_url %></li>
 				 <li><%= link_to "Event_Time", event_times_url %></li>
 					<li><%= link_to "Location", locations_url %></li>
-	  
+
 	            </li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
@@ -49,8 +49,8 @@
 	    </div>
 	  </div>
 
-	
-	<div class="container">
+
+	<!-- <div class="container background"> -->
 
 	    <% if notice.present? %>
 	    <div class="alert alert-success">
@@ -58,9 +58,8 @@
 	      <%= notice %>
 	    </div>
 	    <% end %>
-	
+
 
 <%= yield %>
-
 </body>
 </html>

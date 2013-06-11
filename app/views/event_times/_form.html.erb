@@ -2,10 +2,11 @@
 
 			<div id="addNewTime">
 	  <%= label_tag 'time1' %>
-	  <%= hidden_field_tag 'event_time[][event_id]', params[:event_id]  %>
-	  <!-- time_select 'event_time[][name]' -->
-	<%#= time_select 'event_time[][name]', {:minute_step => 15} %>
+ 
+	 <%= hidden_field_tag 'event_time[][event_id]', params[:event_id]  %>
+	 <%#= time_select 'event_time[][name]', {:minute_step => 15} %>
 	<%= text_field_tag 'event_time[][time_description]' %>
+	  
 	 
 			
 			<div id="addNewTime">

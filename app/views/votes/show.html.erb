@@ -5,7 +5,7 @@
 </p>
 <p>
   <b>Event time:</b>
-  <%= @vote.event_time.time_description %>
+  <%= @vote.event_time.time_description.strftime('%l:%M %p')  %>
 </p>
 <p>
   <b>User:</b>
@@ -16,8 +16,16 @@
   <%= @vote.event_id %>
 </p>
 
-Enter your email to be notified when Voting is closed
-Email Address:
+<p>
+  <b>Email:</b>
+  <%= @vote.token %>
+</p>
 
-<%= link_to 'Edit', edit_vote_path(@vote) %> |
+
+  </div>
+
+
+ 
+
+   <!-- edit_vote_path(@vote) > -->
 <%= link_to 'Back', votes_path %>

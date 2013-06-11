@@ -16,6 +16,10 @@ class Vote < ActiveRecord::Base
   #    self.token = SecureRandom.uuid
   # end
   
-  
+  # validate :vote_eligibility
+  #   
+  #   def vote_eligibility
+  #     if count = totalvoters
+  #          errors.add(:discount, "This event has closed")
   
 end
