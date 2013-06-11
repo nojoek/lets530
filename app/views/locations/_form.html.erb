@@ -1,28 +1,33 @@
 <%= form_tag '/locations' do %>
 
-
+<div id="addNewLoc">
+    <p>
+      <input type="text" name="loc" placeholder="Enter a Location Option!">
+      <a href="#" id="addNew">+</a>
+    </p>
+  </div>
 			 
 
-			<div id="addNewTime">
+			<div id="addNewLoc">
 			  <%= label_tag 'location1' %>
 				<%= hidden_field_tag 'location[][event_id]', params[:event_id]  %>
 			  <%= text_field_tag 'location[][name]' %>
 			</div>
 			
-			<div id="addNewTime">
+			<div id="addNewLoc">
 			  <%= label_tag 'location2' %>
 				<%= hidden_field_tag 'location[][event_id]', params[:event_id]  %>
 			  <%= text_field_tag 'location[][name]' %>
 			</div>
 			
 
-   				<div id="addNewTime">
+   				<div id="addNewLoc">
 				  <%= label_tag 'location3' %>
 					<%= hidden_field_tag 'location[][event_id]', params[:event_id]  %>
 				  <%= text_field_tag 'location[][name]' %>
 				</div>
 				
-					<div id="addNewTime">
+					<div id="addNewLoc">
 					  <%= label_tag 'location4' %>
 						<%= hidden_field_tag 'location[][event_id]', params[:event_id]  %>
 					  <%= text_field_tag 'location[][name]' %>

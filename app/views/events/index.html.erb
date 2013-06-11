@@ -4,7 +4,6 @@
   <tr>
     <th>TotalVotes</th>
     <th>Title</th>
-    <th>Destination</th>
     <th>Final Time</th>
     <th>User</th>
 	<th>Vote Count</th>
@@ -17,7 +16,6 @@
   <tr>
     <td><%= event.totalvoters %></td>
     <td><%= event.title %></td>
-    <td><%= event.votes %></td> <!--!save to variable?-->
     <td><%= event.final_time %></td>
     <td><%= event.user_id if event.user_id.present? %></td>
 	<td><%= event.votes.count %></td>

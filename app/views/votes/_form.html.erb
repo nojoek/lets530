@@ -17,7 +17,7 @@
   <div class="Timefield">
 	<% @eventhere.event_times.each do |et| %>
     <%= f.radio_button :event_time_id, et.id %>
-    <span><%= et.time_description.strftime('%l:%M %p') %></span>
+    <span><%= et.time_description.in_time_zone('Central Time (US & Canada)').strftime('%l:%M %p') %></span>
     <br>
 	<% end %>
 
@@ -67,8 +67,8 @@
     	</div>
   	 -->
   <br><div class="field">
-    <%= f.label :user_id %>
-    <%= f.number_field :user_id %></br>
+    <%#= f.label :user_id %>
+    <%= f.hidden_field :user_id %></br>
   </div>
 
   <div class="field">
@@ -79,4 +79,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-

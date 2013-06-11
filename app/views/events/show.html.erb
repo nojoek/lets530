@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
+<%= render 'details' %>
 
+<!-- if the number of votes cast = totalvoters then the leading location votes becomes the final location and leading time becomes final time
+
+if there is only 1 option then it is the final
+
+and it should end 30 minutes before the first event time
+
+ -->
 <p>
   <b>Final time:</b>
   <%= @event.final_time %>
@@ -19,11 +19,25 @@
  <%=@event.id %>
 </p>
 
- <b>Location Options:</b>
- 
+<p>
+  Location Votes:<br>
+  <% @location_votes.each do |loc_vote, count| %>
+   <%= Location.find(loc_vote).name %> (<%= count %>) ***
+  <% end %>
+<br><br>
+  Event Time Votes:<br>
+  <% @event_time_votes.each do |time_vote, count| %>
+   <%= EventTime.find(time_vote).time_description.strftime('%l:%M %p') %> (<%= count %>) ***
+  <% end %>
+
 </p>
+
+"Copy and past the link below to have others vote on this event"<br>
+<br>
+<%= link_to new_vote_path(event_id: @event.id) %><br>
+<br>
+<%= new_vote_path(event_id: @event.id) %><br>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
-

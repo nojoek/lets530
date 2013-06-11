@@ -1,9 +1,18 @@
-<h2>Select The Time from the options below</h2>
+<%= render 'events/details' %>
 
+<h2>Vote for one Time and Location below</h2>
 
   <%= render 'form' %>
 
-<h2>Select The Location from the options below</h2>
+<br>
+<br>
+
+"Copy and past the link below to have others vote on this event"<br>
+<br>
+<%= link_to new_vote_path(event_id: @event.id) %><br>
+<br>
+<%= new_vote_path(event_id: @event.id) %><br>
+
+
   <!-- @vote.event_time_id  was in ruby-->
   <!-- link_to 'Back', votes_path was in ruby -->
-

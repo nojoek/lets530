@@ -28,8 +28,8 @@ class EventTimesController < ApplicationController
     @event_id = params[:event_id]
     @event_time.event_id = @event_id
     @location = Location.new
-  
-    
+
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,12 +49,13 @@ class EventTimesController < ApplicationController
       params[:event_time].each do |clock|
         event_time = EventTime.new
         event_time.event_id = clock[:event_id]
-        event_time.time_description = Time.parse(clock[:time_description])
+        time_string = "#{clock[:time_description][:hour]}:#{clock[:time_description][:minute]} #{clock[:time_description][:ampm]}"
+        event_time.time_description = Time.parse(time_string)
         event_time.save
       end
            # @event_time = EventTime.new(params[event])
            # @location = @event_time.event
-    redirect_to new_location_path(event_id: params[:event_id]), notice: 'Event was successfully created.' 
+    redirect_to new_location_path(event_id: params[:event_id]), notice: 'Event was successfully created.'
     # respond_to do |format|
       # if @event_time.save
         # format.html { redirect_to @event_time, notice: 'Event time was successfully created.' }
@@ -67,7 +68,7 @@ class EventTimesController < ApplicationController
         # format.json { render json: @event_time.errors, status: :unprocessable_entity }
       # end
     end
-   
+
 
   # PUT /event_times/1
   # PUT /event_times/1.json

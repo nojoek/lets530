@@ -7,25 +7,35 @@
   <b>Event time:</b>
   <%= @vote.event_time.time_description.strftime('%l:%M %p')  %>
 </p>
-<p>
+<!-- <p>
   <b>User:</b>
   <%= @vote.user_id %>
 </p>
 <p>
   <b>Event:</b>
   <%= @vote.event_id %>
-</p>
+</p> -->
+
 
 <p>
-  <b>Email:</b>
-  <%= @vote.token %>
-</p>
-
-
-  </div>
-
-
+  <div class="field">
+    <%#= hidden_field_tag :event_id %>
+  <%= hidden_field_tag 'event_id', params[:event_id] %>
+  </div> </b>
  
+ <div class="field">
+    <%= label_tag "Enter your email below to be sent the winning Time and Location:" %>
+    <%= text_field_tag @vote.token %>
+   
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<br>
+ 
+
+
+
+
 
    <!-- edit_vote_path(@vote) > -->
 <%= link_to 'Back', votes_path %>
