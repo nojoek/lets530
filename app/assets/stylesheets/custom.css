@@ -316,7 +316,7 @@
 .background{
 	padding-top: 5%;
 	padding-bottom: 40px;
-	background-image: url("../images/bg-04.jpg");
+	background-image: url(bg-04.jpg);
 	background-size: cover;
 	background-image: no-repeat;
 	height: 100%;
@@ -325,7 +325,7 @@
 }
 
 .foreground{
-	background-image: url("../images/texture.png");
+	background-image: url(texture.png);
 	margin: auto;
 	border: black;
 	border-radius: 10px;
