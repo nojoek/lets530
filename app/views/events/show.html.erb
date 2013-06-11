@@ -2,10 +2,13 @@
 
 
 <%= render 'details' %>
+<<<<<<< HEAD
 
 <!-- if the number of votes cast = totalvoters then the leading location votes becomes the final location and leading time becomes final time
 
 if there is only 1 option then it is the final
+=======
+>>>>>>> 5fd6b470812f6d3ef51280a4a59e5ae87c08d483
 
 and it should end 30 minutes before the first event time
 
@@ -19,6 +22,7 @@ and it should end 30 minutes before the first event time
  <%=@event.id %>
 </p>
 
+<<<<<<< HEAD
 <p>
   Location Votes:<br>
   <% @location_votes.each do |loc_vote, count| %>
@@ -36,6 +40,26 @@ and it should end 30 minutes before the first event time
 <br>
 <%= link_to new_vote_path(event_id: @event.id) %><br>
 <br>
+=======
+ <b>Location Options:</b>
+
+</p>
+
+<p>
+  Location Votes:<br>
+  <% @location_votes.each do |loc_vote, count| %>
+   <%= Location.find(loc_vote).name %> (<%= count %>)
+  <% end %>
+<br>
+  Event Time Votes:<br>
+  <% @event_time_votes.each do |time_vote, count| %>
+   <%= EventTime.find(time_vote).time_description %> (<%= count %>)
+  <% end %>
+
+</p>
+
+<%= link_to 'Vote Now!!!', new_vote_path(event_id: @event.id) %><br>
+>>>>>>> 5fd6b470812f6d3ef51280a4a59e5ae87c08d483
 <%= new_vote_path(event_id: @event.id) %><br>
 
 
