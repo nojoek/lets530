@@ -15,8 +15,8 @@
 
 <% @votes.each do |vote| %>
   <tr>
-    <td><%= vote.location.name %></td>
-    <td><%= vote.event_time.time_description.strftime('%l:%M %p') %></td>
+    <td><%= vote.location.name if vote.location.present? %></td>
+    <td><%= vote.event_time.time_description.strftime('%l:%M %p') if vote.event_time.time_description.present? %></td>
     <td><%= vote.user_id %></td>
     <td><%= vote.event_id %></td>
 	<td><%= vote.token %></td>

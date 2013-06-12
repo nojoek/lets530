@@ -1,5 +1,8 @@
 <%= form_tag '/locations' do %>
 
+
+<!-- <############Changed Disable to False to make the Locations editable-> -->
+
 			<div class="addNewLoc">
 				<p>
 				  <%= label_tag 'location1' %>
@@ -10,7 +13,7 @@
 			
 				<p class="hide">
 				  <%= label_tag 'location2' %>
-				  <%= text_field_tag 'location[][name]', '', :disabled => true  %>
+				  <%= text_field_tag 'location[][name]', '', :disabled => false  %>
 				  <%= hidden_field_tag 'location[][event_id]', params[:event_id]  %>
 				  <a href="#" class="addNew btn btn-success">+</a>
 				  <a href="#" class="rem btn btn-danger">-</a>
@@ -18,7 +21,7 @@
 			
 				<p class="hide">
 				  <%= label_tag 'location3' %>
-				  <%= text_field_tag 'location[][name]', '', :disabled => true %>
+				  <%= text_field_tag 'location[][name]', '', :disabled => false %>
 				  <%= hidden_field_tag 'location[][event_id]', params[:event_id]  %>
 				  <a href="#" class="addNew btn btn-success">+</a>
 				  <a href="#" class="rem btn btn-danger">-</a>
@@ -26,7 +29,7 @@
 		
 				<p class="hide">
 				  <%= label_tag 'location4' %>
-				  <%= text_field_tag 'location[][name]', '', :disabled => true %>
+				  <%= text_field_tag 'location[][name]', '', :disabled => false %>
 				  <%= hidden_field_tag 'location[][event_id]', params[:event_id]  %>
 				  <a href="#" class="rem btn btn-danger">-</a>
 				</p>

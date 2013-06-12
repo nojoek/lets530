@@ -2,11 +2,12 @@
 
 <table class="table table-hover">
   <tr>
-    <th>TotalVoters</th>
+    <th>Invitees</th>
     <th>Title</th>
     <th>Lead Time</th>
-    <th>Lead Loc</th>
-	<th>Vote Count</th>
+    <th>Lead Place</th>
+	<th>Votes</th>
+	<th>ID</th>
     <th></th>
     <th></th>
 	<th></th>
@@ -19,9 +20,10 @@
     <td><%= event.final_time %></td>
     <td><%= event.user_id if event.user_id.present? %></td>
 	<td><%= event.votes.count %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><%= event.id %></td>
+    <td><%= link_to 'Show', event,  class: 'btn btn-primary' %></td>
+    <td><%= link_to 'Edit', edit_event_path(event), class: 'btn btn-primary' %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
   </tr>
 <% end %>
 </table>

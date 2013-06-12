@@ -12,18 +12,20 @@
   <% end %>
 
  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.label "What do you want to do?" %>
+    <%= f.text_field :title, :placeholder => "Brunch/ drinks/ game night..." %>
   </div>
 
-<div class="numvoters">
-    <%= f.label "Total Number of Voters" %>
-    <%= f.number_field :totalvoters, :in => 1...30,  :placeholder => "including yourself" %>
+
+<div class="field">
+    <%= f.label "How many people are coming?" %>
+    <%= f.number_field :totalvoters, :in => 1...30,  :placeholder => "Make sure to include yourself" %>
+
   </div>
 
   <div class="field">
     <%= f.label :description %>
-    <%= f.text_field :description, :placeholder => "optional" %>
+    <%= f.text_field :description, :placeholder => "Optional" %>
   </div>
  
 <div class="actions">
