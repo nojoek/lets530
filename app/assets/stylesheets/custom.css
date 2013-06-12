@@ -445,7 +445,19 @@ input[type="color"]:focus,
 .logo{
 	width: 350px;
 	margin: auto;
-	margin-bottom:40px;
+	margin-bottom: 3px;
+
+}
+
+.tagline{
+	background-color: #F5EBEE;
+	padding: 3%;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px #888;
+	color: black;
+	
+	text-align: center;
+	letter-spacing: .5px;
 }
 
 .plus{
@@ -461,7 +473,7 @@ input[type="color"]:focus,
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
 }
 
-@media only screen and (max-width: 450px) {	
+@media only screen and (max-width: 500px) {	
 
 	.foreground{
 		padding: 40px;
@@ -473,9 +485,14 @@ input[type="color"]:focus,
 		background-color: gray;
 	}
 
+	.tagline{
+		font-size: .9em;
+		padding: 1%;
+	}
+
 }
 
-@media only screen and (min-width: 451px) {	
+@media only screen and (min-width: 501px) {	
 	.foreground{
 		max-width: 450px;
 		padding: 40px;
