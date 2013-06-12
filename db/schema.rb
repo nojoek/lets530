@@ -57,9 +57,11 @@ ActiveRecord::Schema.define(:version => 20130606201448) do
     t.integer  "event_time_id"
     t.integer  "user_id"
     t.integer  "event_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "token"
+    t.string   "event_time_column"
+    t.string   "event_location_column"
   end
 
 end
