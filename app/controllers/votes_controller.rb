@@ -56,6 +56,7 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
+        UserMailer.result(@vote).deliver
         # cookies[:events_voted] ||= []
         # cookies[:events_voted] << @vote.event_id
 

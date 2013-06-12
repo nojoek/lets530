@@ -443,20 +443,24 @@ input[type="color"]:focus,
 }
 
 .logo{
-	width: 350px;
+	width: 100;
 	margin: auto;
 	margin-bottom: 3px;
+	margin-left: 0px;
+	margin-top: 3px;
 
 }
 
 .tagline{
-	background-color: #F5EBEE;
+	background-color: lightblue;
 	padding: 3%;
 	border-radius: 5px;
 	box-shadow: 5px 5px 5px #888;
 	color: black;
-	
-	text-align: center;
+	margin-bottom: 3px;
+	margin-left: 150px;
+	margin-top: -50px;
+	text-align: right;
 	letter-spacing: .5px;
 }
 
