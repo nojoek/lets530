@@ -22,18 +22,17 @@
   <%= hidden_field_tag 'event_id', params[:event_id] %>
   </div> </b>
  
+	<%= form_tag do %>
+	 <div class="field">
+	<%= label_tag "Enter your email below to be sent the winning Time and Location:" %>
+	    <%= text_field_tag @vote.token %>
 
-  <%= form_tag do %>
-   <div class="field">
-  <%= label_tag "Enter your email below to be sent the winning Time and Location:" %>
-      <%= text_field_tag @vote.token %>
+	  <div class="actions">
+	    <%= submit_tag %>
+	  </div>
+	<br>
 
-    <div class="actions">
-      <%= submit_tag %>
-    </div>
-  <br>
-
-  <% end %>
+	<% end %>
   <%= @vote.token %>
 </p>
  
