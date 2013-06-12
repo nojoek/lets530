@@ -20,6 +20,7 @@ class VotesController < ApplicationController
       format.json { render json: @vote }
     end
   end
+  # if @user.email.save
 
   # GET /votes/new
   # GET /votes/new.json

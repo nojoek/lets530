@@ -8,20 +8,10 @@
 
 if there is only 1 option then it is the final
  
- 
 
 and it should end 30 minutes before the first event time
 
  -->
-<p>
-  <b>Final time:</b>
-  <%= @event.final_time %>
-</p>
-<p>
-  <b>Event ID:</b>
- <%=@event.id %>
-</p>
-
  
 <p>
   Location Votes:<br>
@@ -29,6 +19,7 @@ and it should end 30 minutes before the first event time
    <%= Location.find(loc_vote).name %> (<%= count %>) ***<br>
   <% end %>
 <br><br>
+ 
   Event Time Votes:<br>
   <% @event_time_votes.each do |time_vote, count| %>
    <%= EventTime.find(time_vote).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %>  (<%= count %>) *** <br>
