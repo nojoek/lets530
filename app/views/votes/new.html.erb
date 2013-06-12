@@ -9,7 +9,12 @@
 
 "Copy and past the link below to have others vote on this event"<br>
 <br>
-<%= link_to new_vote_path(event_id: @event.id) %><br>
+
+
+"http://letdo.herokuapp.com/<%= link_to new_vote_path(event_id: @event.id) %>" 
+
+
+<br>
 <br>
 <%= new_vote_path(event_id: @event.id) %><br>
 

@@ -26,25 +26,21 @@ and it should end 30 minutes before the first event time
 <p>
   Location Votes:<br>
   <% @location_votes.each do |loc_vote, count| %>
-   <%= Location.find(loc_vote).name %> (<%= count %>) ***
+   <%= Location.find(loc_vote).name %> (<%= count %>) ***<br>
   <% end %>
 <br><br>
   Event Time Votes:<br>
   <% @event_time_votes.each do |time_vote, count| %>
-   <%= EventTime.find(time_vote).time_description.strftime('%l:%M %p') %> (<%= count %>) ***
+   <%= EventTime.find(time_vote).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %>  (<%= count %>) *** <br>
   <% end %>
 
 </p>
 
 "Copy and past the link below to have others vote on this event"<br>
-<br>
+
 <%= link_to new_vote_path(event_id: @event.id) %><br>
-<br>
- 
-<%= link_to 'Vote Now!!!', new_vote_path(event_id: @event.id) %><br>
- 
-<%= new_vote_path(event_id: @event.id) %><br>
 
+ <br>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+ |
 <%= link_to 'Back', events_path %>
