@@ -23,14 +23,14 @@ $('.addNew').on('click', function(){
 });
 
 $('.addNew').on('click', function(){
-  $(this).parent().next('p').next('input').attr('disabled', ' ')
-})
+  $('input[disabled=disabled]').removeProp('disabled')
+  return false;
+});
 
 $('.rem').on('click', function(){
   $(this).parent('p').addClass('hide')
   return false;
 });
-
 
 
 
