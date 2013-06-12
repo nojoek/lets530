@@ -62,6 +62,9 @@ class VotesController < ApplicationController
         format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
         format.json { render json: @vote, status: :created, location: @vote }
       else
+        puts "failed vote save"
+        @event = Event.find(@vote.event_id)
+        @eventhere = Event.find_by_id(@vote.event_id)
         format.html { render action: "new" }
         format.json { render json: @vote.errors, status: :unprocessable_entity }
       end
