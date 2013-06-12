@@ -25,9 +25,20 @@ class VotesController < ApplicationController
   # GET /votes/new
   # GET /votes/new.json
   def new
-    # if cookies[:events_voted].present? && cookies[:events_voted].includes? params[:event_id]
-      # redirect_to '#'
-    # end
+
+
+    # cookies.delete :events_voted
+    puts cookies[:events_voted].class
+    puts cookies[:events_voted].inspect
+
+    if cookies[:events_voted].present?
+      events_voted = cookies[:events_voted].split('&')
+    else
+      events_voted = []
+    end
+    puts events_voted.inspect
+
+
     @vote = Vote.new
     @location = Location.all
     @event = Event.find(params[:event_id])
@@ -37,8 +48,14 @@ class VotesController < ApplicationController
     @eventhere = Event.find_by_id(params[:event_id])
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @vote }
+      if events_voted.include?(params[:event_id])
+        # puts "Already voted for event #{params[:event_id]}"
+        format.html { redirect_to @event, notice: 'You cannot vote more than once.' }
+        format.json { render json: @event, status: :created, location: @vote }
+      else
+        format.html # new.html.erb
+        format.json { render json: @vote }
+      end
     end
   end
 
@@ -53,15 +70,28 @@ class VotesController < ApplicationController
   def create
     @vote = Vote.new(params[:vote])
     # @event_times = EventTime.new #where does this go and why?
+    @event = Event.find(@vote.event_id)
+    @eventhere = Event.find_by_id(@vote.event_id)
+
+    if cookies[:events_voted].present?
+      cookies.permanent[:events_voted] = cookies[:events_voted].split('&').map { |event_id| event_id.to_i }
+    else
+      cookies.permanent[:events_voted] = []
+    end
+    puts cookies[:events_voted].inspect
 
     respond_to do |format|
-      if @vote.save
-        # cookies[:events_voted] ||= []
-        # cookies[:events_voted] << @vote.event_id
+      if cookies[:events_voted].include?(@vote.event_id)
+        format.html { redirect_to @event, notice: 'You cannot vote more than once.' }
+        format.json { render json: @event, status: :created, location: @vote }
+      elsif @vote.save
+        cookies[:events_voted] << @vote.event_id
+        puts cookies[:events_voted].inspect
 
         format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
         format.json { render json: @vote, status: :created, location: @vote }
       else
+
         format.html { render action: "new" }
         format.json { render json: @vote.errors, status: :unprocessable_entity }
       end
