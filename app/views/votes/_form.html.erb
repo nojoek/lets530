@@ -17,20 +17,22 @@
   <div class="Timefield">
 	<% @eventhere.event_times.each do |et| %>
     
-    <span><%= et.time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p')  %></span>
+    
 
 <%= f.radio_button :event_time_id, et.id if et.time_description? %>
+<span><%= et.time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p')  %></span>
 
-	<% end %>
+  <% end %>
 
 <!-- Can we Make Two Columns, One for Times and One for Locations? -->
 <br>
 <br>
 
 	<% @eventhere.locations.each do |locale| %>
-    <span><%= locale.name  %></span>
-<%= f.radio_button :location_id, locale.id if locale.name? %>
-    <br>
+    
+  <%= f.radio_button :location_id, locale.id if locale.name? %>
+  <span><%= locale.name  %></span>
+
 	<% end %>
 
   <!--  <%#= f.label "Time Option 1" %>
@@ -71,16 +73,23 @@
     	</div>
   	 -->
 
+
+	 <div class="field">
+	<%= f.label "Enter your email below to be sent the winning Time and Location:" %>
+	    <%= f.text_field :token %>
+
+	
   <br><div class="field">
     <%#= f.label :user_id %>
     <%= f.hidden_field :user_id %></br>
   </div>
 
-  <div class="field">
-    <%#= f.hidden_field :event_id %>
-    <%= f.hidden_field :event_id, value: params[:event_id] %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+    <div class="field">
+      <%#= f.hidden_field :event_id %>
+      <%= f.hidden_field :event_id, value: params[:event_id] %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
   </div>
 <% end %>
