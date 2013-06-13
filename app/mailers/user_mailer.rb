@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "results.letsdo.gmail.com"
   
-  def result(user)
-      @user = user
+  def result(vote)
+      @vote = vote
       @url  = "http://example.com/login"
-      mail(:to => user.email, :subject => "The Results are In")
+      mail(:to => vote.token, :subject => "The Results are In")
     end
 end

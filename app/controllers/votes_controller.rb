@@ -81,17 +81,20 @@ class VotesController < ApplicationController
     puts cookies[:events_voted].inspect
 
     respond_to do |format|
-      if cookies[:events_voted].include?(@vote.event_id)
-        format.html { redirect_to @event, notice: 'You cannot vote more than once.' }
-        format.json { render json: @event, status: :created, location: @vote }
-      elsif @vote.save
-        cookies[:events_voted] << @vote.event_id
-        puts cookies[:events_voted].inspect
+
+      if @vote.save
+        UserMailer.result(@vote).deliver
+        # cookies[:events_voted] ||= []
+        # cookies[:events_voted] << @vote.event_id
+
 
         format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
         format.json { render json: @vote, status: :created, location: @vote }
       else
 
+        puts "failed vote save"
+        @event = Event.find(@vote.event_id)
+        @eventhere = Event.find_by_id(@vote.event_id)
         format.html { render action: "new" }
         format.json { render json: @vote.errors, status: :unprocessable_entity }
       end
