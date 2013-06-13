@@ -55,7 +55,7 @@ class EventTimesController < ApplicationController
       end
            # @event_time = EventTime.new(params[event])
            # @location = @event_time.event
-    redirect_to new_location_path(event_id: params[:event_id]), notice: 'Event was successfully created.'
+    redirect_to new_location_path(event_id: params[:event_id]), notice: 'Give a Location or provide up to 4 options'
     # respond_to do |format|
       # if @event_time.save
         # format.html { redirect_to @event_time, notice: 'Event time was successfully created.' }

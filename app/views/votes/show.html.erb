@@ -5,7 +5,7 @@
 </p>
 <p>
   <b>Event time:</b>
-  <%= @vote.event_time.time_description.strftime('%l:%M %p')  %>
+  <%= @vote.event_time.time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %>
 </p>
 <!-- <p>
   <b>User:</b>
@@ -15,39 +15,26 @@
   <b>Event:</b>
   <%= @vote.event_id %>
 </p> -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 5fd6b470812f6d3ef51280a4a59e5ae87c08d483
-
+ 
 <p>
   <div class="field">
     <%#= hidden_field_tag :event_id %>
   <%= hidden_field_tag 'event_id', params[:event_id] %>
   </div> </b>
-<<<<<<< HEAD
  
- <div class="field">
-    <%= label_tag "Enter your email below to be sent the winning Time and Location:" %>
-    <%= text_field_tag @vote.token %>
-   
-  <div class="actions">
-    <%= submit_tag %>
-  </div>
-<br>
- 
-=======
+	<%= form_tag do %>
+	 <div class="field">
+	<%= label_tag "Enter your email below to be sent the winning Time and Location:" %>
+	    <%= text_field_tag @vote.token %>
+
+	  <div class="actions">
+	    <%= submit_tag %>
+	  </div>
+	<br>
+
+	<% end %>
   <%= @vote.token %>
 </p>
->>>>>>> 5fd6b470812f6d3ef51280a4a59e5ae87c08d483
-
-
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 5fd6b470812f6d3ef51280a4a59e5ae87c08d483
-
+ 
    <!-- edit_vote_path(@vote) > -->
-<%= link_to 'Back', votes_path %>
+ 

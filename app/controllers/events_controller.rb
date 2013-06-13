@@ -18,8 +18,23 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   @event_time = EventTime.new
      @location = Location.new
+     
      @location_votes = @event.votes.count(group: :location_id)
+     @sorted_location_votes = []
+     @location_votes.each do |id, count|
+       @sorted_location_votes << {id: id, count: count}
+     end
+     @sorted_location_votes.sort! { |x, y| y[:count] <=> x[:count] }
+     @location_votes = @sorted_location_votes
+     
+     
      @event_time_votes = @event.votes.count(group: :event_time_id)
+     @sorted_event_time_votes = []
+     @event_time_votes.each do |id, count|
+       @sorted_event_time_votes << {id: id, count: count }
+     end
+     @event_time_votes = @sorted_event_time_votes.sort { |x, y| y[:count] <=> x[:count]}
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @event }

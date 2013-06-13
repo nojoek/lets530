@@ -2,66 +2,37 @@
 
 
 <%= render 'details' %>
-<<<<<<< HEAD
+ 
 
 <!-- if the number of votes cast = totalvoters then the leading location votes becomes the final location and leading time becomes final time
 
 if there is only 1 option then it is the final
-=======
->>>>>>> 5fd6b470812f6d3ef51280a4a59e5ae87c08d483
+ 
 
 and it should end 30 minutes before the first event time
 
  -->
-<p>
-  <b>Final time:</b>
-  <%= @event.final_time %>
-</p>
-<p>
-  <b>Event ID:</b>
- <%=@event.id %>
-</p>
-
-<<<<<<< HEAD
+ 
 <p>
   Location Votes:<br>
-  <% @location_votes.each do |loc_vote, count| %>
-   <%= Location.find(loc_vote).name %> (<%= count %>) ***
+  <% @location_votes.each do |info| %>
+   <%= Location.find(info[:id]).name %> (<%= info[:count] %>) ***<br>
   <% end %>
-<br><br>
+<br>
+ 
   Event Time Votes:<br>
-  <% @event_time_votes.each do |time_vote, count| %>
-   <%= EventTime.find(time_vote).time_description.strftime('%l:%M %p') %> (<%= count %>) ***
+  <% @event_time_votes.each do |info| %>
+   <%= EventTime.find(info[:id]).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %> (<%= info[:count] %>) *** <br>
   <% end %>
 
 </p>
 
-"Copy and past the link below to have others vote on this event"<br>
-<br>
+<h3>Copy and past the link below to have others vote on this event</h3><br>
+
 <%= link_to new_vote_path(event_id: @event.id) %><br>
-<br>
-=======
- <b>Location Options:</b>
 
-</p>
-
-<p>
-  Location Votes:<br>
-  <% @location_votes.each do |loc_vote, count| %>
-   <%= Location.find(loc_vote).name %> (<%= count %>)
-  <% end %>
-<br>
-  Event Time Votes:<br>
-  <% @event_time_votes.each do |time_vote, count| %>
-   <%= EventTime.find(time_vote).time_description %> (<%= count %>)
-  <% end %>
-
-</p>
-
-<%= link_to 'Vote Now!!!', new_vote_path(event_id: @event.id) %><br>
->>>>>>> 5fd6b470812f6d3ef51280a4a59e5ae87c08d483
-<%= new_vote_path(event_id: @event.id) %><br>
+ <br>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+ 
 <%= link_to 'Back', events_path %>

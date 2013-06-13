@@ -1,8 +1,6 @@
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
+    <div class="error" id="error_explanation">
       <ul>
       <% @event.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -16,9 +14,11 @@
     <%= f.text_field :title, :placeholder => "Brunch/ drinks/ game night..." %>
   </div>
 
+
 <div class="field">
     <%= f.label "How many people are coming?" %>
     <%= f.number_field :totalvoters, :in => 1...30,  :placeholder => "Make sure to include yourself" %>
+
   </div>
 
   <div class="field">
