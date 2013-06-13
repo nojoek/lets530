@@ -7,10 +7,17 @@
 		<%#= time_select 'event_time[][name]', {:minute_step => 15} %>
 		<%#= text_field_tag 'event_time[][time_description]' %>
 
+<<<<<<< HEAD
 <%= select_tag 'event_time[][time_description][hour]',  options_for_select((1..12).to_a), :class => 'timeInput span1' %>
  
 <%= select_tag 'event_time[][time_description][minute]', options_for_select(['00', '15', '30', '45']), :class => 'timeInput span1' %>
 <%= select_tag 'event_time[][time_description][ampm]', options_for_select(['AM', 'PM']), :class => 'timeInput span1' %>
+=======
+		<%= select_tag 'event_time[][time_description][hour]', options_for_select((1..12).to_a) %>
+
+		<%= select_tag 'event_time[][time_description][minute]', options_for_select(['00', '15', '30', '45']) %>
+		<%= select_tag 'event_time[][time_description][ampm]', options_for_select(['AM', 'PM']) %>
+>>>>>>> NArnold
 	</div>
 <% end %>
 
