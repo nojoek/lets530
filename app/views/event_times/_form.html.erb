@@ -3,7 +3,6 @@
 <div class="addNewTime">
 	<%= label_tag "time1" %>
 	<%= hidden_field_tag 'event_time[][event_id]', params[:event_id]  %>
-
 	<%= select_tag 'event_time[][time_description][hour]', options_for_select((1..12).to_a), :class => 'timeInput span2' %>
 	 
 	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['00', '15', '30', '45']), :class => 'timeInput span2' %>
