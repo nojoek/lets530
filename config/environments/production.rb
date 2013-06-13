@@ -28,7 +28,7 @@ Lets530::Application.configure do
     :port                 => 587,
     :domain               => 'www.gmail.com',
     :user_name            => 'letsdo.results',
-    :password             => 'cracked2334',
+    :password             => 'letsdo2013',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
     
