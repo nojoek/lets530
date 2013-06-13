@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 
 <%= render 'details' %>
@@ -16,20 +16,20 @@ and it should end 30 minutes before the first event time
 <p>
   Location Votes:<br>
   <% @location_votes.each do |info| %>
-   <%= Location.find(info[:id]).name %> (<%= info[:count] %>) ***<br>
+   <%= Location.find(info[:id]).name %> (<%= info[:count] %>)<br>
   <% end %>
 <br>
  
   Event Time Votes:<br>
   <% @event_time_votes.each do |info| %>
-   <%= EventTime.find(info[:id]).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %> (<%= info[:count] %>) *** <br>
+   <%= EventTime.find(info[:id]).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %> (<%= info[:count] %>) <br>
   <% end %>
 
 </p>
 
-<h3>Copy and past the link below to have others vote on this event</h3><br>
+<h4>Copy and paste the link below to have others vote on this event</h4><br>
 
-http://letdo.herokuapp.com<%=new_vote_path(event_id: @event.id) %>
+<h3>http://letdo.herokuapp.com<%=new_vote_path(event_id: @event.id) %></h3>
 
 <br>
 <br>

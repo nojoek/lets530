@@ -50,7 +50,7 @@ class EventTimesController < ApplicationController
         event_time = EventTime.new
         event_time.event_id = clock[:event_id]
         time_string = "#{clock[:time_description][:hour]}:#{clock[:time_description][:minute]} #{clock[:time_description][:ampm]}"
-        event_time.time_description = Time.parse(time_string)
+        event_time.time_description = Time.parse(time_string)  
         event_time.save
       end
            # @event_time = EventTime.new(params[event])
