@@ -17,37 +17,21 @@
   <div class="Timefield">
 	<% @eventhere.event_times.each do |et| %>
     
-<<<<<<< HEAD
     
-
 <%= f.radio_button :event_time_id, et.id if et.time_description? %>
 <span><%= et.time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p')  %></span>
 
   <% end %>
 
-=======
-    <span><%= et.time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p')  %></span>
-
-<%= f.radio_button :event_time_id, et.id if et.time_description? %>
-
-	<% end %>
-
->>>>>>> NArnold
 <!-- Can we Make Two Columns, One for Times and One for Locations? -->
 <br>
 <br>
 
 	<% @eventhere.locations.each do |locale| %>
-<<<<<<< HEAD
-    
+
   <%= f.radio_button :location_id, locale.id if locale.name? %>
   <span><%= locale.name  %></span>
 
-=======
-    <span><%= locale.name  %></span>
-<%= f.radio_button :location_id, locale.id if locale.name? %>
-    <br>
->>>>>>> NArnold
 	<% end %>
 
   <!--  <%#= f.label "Time Option 1" %>
@@ -88,15 +72,12 @@
     	</div>
   	 -->
 
-<<<<<<< HEAD
 
 	 <div class="field">
 	<%= f.label "Enter your email below to be sent the winning Time and Location:" %>
 	    <%= f.text_field :token %>
 
 	
-=======
->>>>>>> NArnold
   <br><div class="field">
     <%#= f.label :user_id %>
     <%= f.hidden_field :user_id %></br>

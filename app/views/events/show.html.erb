@@ -16,28 +16,19 @@ and it should end 30 minutes before the first event time
 <p>
   Location Votes:<br>
   <% @location_votes.each do |info| %>
-<<<<<<< HEAD
-   <%= Location.find(info[:id]).name %> (<%= info[:count] %>) <br>
-=======
    <%= Location.find(info[:id]).name %> (<%= info[:count] %>) ***<br>
->>>>>>> NArnold
   <% end %>
 <br>
  
   Event Time Votes:<br>
   <% @event_time_votes.each do |info| %>
-<<<<<<< HEAD
-   <%= EventTime.find(info[:id]).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %> (<%= info[:count] %>)  <br>
-=======
    <%= EventTime.find(info[:id]).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %> (<%= info[:count] %>) *** <br>
->>>>>>> NArnold
   <% end %>
 
 </p>
 
 <h3>Copy and past the link below to have others vote on this event</h3><br>
 
-<<<<<<< HEAD
 http://letdo.herokuapp.com<%=new_vote_path(event_id: @event.id) %>
 
 <br>
@@ -45,12 +36,3 @@ http://letdo.herokuapp.com<%=new_vote_path(event_id: @event.id) %>
 
  
 <%= link_to 'Edit Your Event', edit_event_url %>
-=======
-<%= link_to new_vote_path(event_id: @event.id) %><br>
-
- <br>
-
-
- 
-<%= link_to 'Back', events_path %>
->>>>>>> NArnold
