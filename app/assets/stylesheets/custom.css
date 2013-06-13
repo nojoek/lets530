@@ -473,6 +473,12 @@ input[type="color"]:focus,
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
 }
 
+/*.timeInput {
+	position: relative;
+	width:	28%;
+	margin: 0 auto;
+}*/
+
 @media only screen and (max-width: 500px) {	
 
 	.foreground{
