@@ -87,6 +87,7 @@ class VotesController < ApplicationController
       elsif @vote.save
         cookies[:events_voted] << @vote.event_id
         puts cookies[:events_voted].inspect
+        UserMailer.result(@vote).deliver
 
 
         format.html { redirect_to @event}
