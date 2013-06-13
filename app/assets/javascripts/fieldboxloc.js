@@ -28,6 +28,15 @@ $('.rem').on('click', function(){
   return false;
 });
 
+$('.addNewTime').on('click', function(){
+  $(this).parent().next('div').removeClass('hide')
+  return false;
+});
 
+
+$('.remTime').on('click', function(){
+  $(this).parent('div').remove()
+  return false;
+});
 
 });
