@@ -18,24 +18,28 @@ $(function() {
 
 
 $('.addNew').on('click', function(){
-  $(this).parent().next('p').removeClass('hide')
+  $(this).parent().next('p').removeClass('hide');
   return false;
 });
 
 
 $('.rem').on('click', function(){
-  $(this).parent('p').remove()
+  // $(this).parent('p').remove();
+  $(this).parent('p').addClass('hide');
+  $(this).parent('p').children('input').val('');
   return false;
 });
 
 $('.addNewTime').on('click', function(){
-  $(this).parent().next('div').removeClass('hide')
+  $(this).parent().next('div').removeClass('hide');
   return false;
 });
 
 
 $('.remTime').on('click', function(){
-  $(this).parent('div').remove()
+  // $(this).parent('div').remove();
+  $(this).parent('div').addClass('hide');
+  $(this).parent('div').children('select').val('hour');
   return false;
 });
 

@@ -3,9 +3,9 @@
 <div class="addNewTime">
 	<%= label_tag "time1" %>
 	<%= hidden_field_tag 'event_time[][event_id]', params[:event_id]  %>
-	<%= select_tag 'event_time[][time_description][hour]', options_for_select((1..12).to_a), :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][hour]', options_for_select(['hour', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]), :class => 'timeInput span2' %>
 	 
-	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['00', '15', '30', '45']), :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['min', '00', '15', '30', '45']), :class => 'timeInput span2' %>
 	<%= select_tag 'event_time[][time_description][ampm]', options_for_select(['AM', 'PM']), :class => 'timeInput span2' %>
 	<a href="#" class="addNewTime btn btn-success">+</a>
 </div>
@@ -14,9 +14,9 @@
 	<%= label_tag "time2" %>
 	<%= hidden_field_tag 'event_time[][event_id]', params[:event_id]  %>
 
-	<%= select_tag 'event_time[][time_description][hour]', options_for_select((1..12).to_a), :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][hour]', options_for_select(['hour', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]), :class => 'timeInput span2' %>
 	 
-	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['00', '15', '30', '45']), :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['min', '00', '15', '30', '45']), :class => 'timeInput span2' %>
 	<%= select_tag 'event_time[][time_description][ampm]', options_for_select(['AM', 'PM']), :class => 'timeInput span2' %>
 	<a href="#" class="addNewTime btn btn-success">+</a>
   <a href="#" class="remTime btn btn-danger">-</a>
@@ -26,9 +26,9 @@
 	<%= label_tag "time3" %>
 	<%= hidden_field_tag 'event_time[][event_id]', params[:event_id]  %>
 
-	<%= select_tag 'event_time[][time_description][hour]', options_for_select((1..12).to_a),  :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][hour]', options_for_select(['hour', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]), :class => 'timeInput span2' %>
 	 
-	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['00', '15', '30', '45']),  :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['min', '00', '15', '30', '45']),  :class => 'timeInput span2' %>
 	<%= select_tag 'event_time[][time_description][ampm]', options_for_select(['AM', 'PM']),  :class => 'timeInput span2' %>
 	<a href="#" class="addNewTime btn btn-success">+</a>
   <a href="#" class="remTime btn btn-danger">-</a>
@@ -38,9 +38,9 @@
 	<%= label_tag "time4" %>
 	<%= hidden_field_tag 'event_time[][event_id]', params[:event_id]  %>
 
-	<%= select_tag 'event_time[][time_description][hour]', options_for_select((1..12).to_a), :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][hour]', options_for_select(['hour', 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]), :class => 'timeInput span2' %>
 	 
-	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['00', '15', '30', '45']),  :class => 'timeInput span2' %>
+	<%= select_tag 'event_time[][time_description][minute]', options_for_select(['min', '00', '15', '30', '45']),  :class => 'timeInput span2' %>
 	<%= select_tag 'event_time[][time_description][ampm]', options_for_select(['AM', 'PM']), :class => 'timeInput span2' %>
   <a href="#" class="remTime btn btn-danger">-</a>
 </div>
