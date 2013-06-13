@@ -100,14 +100,7 @@ sub {
   bottom: -0.25em;
 }
 
-img {
-  width: auto\9;
-  height: auto;
-  max-width: 100%;
-  vertical-align: middle;
-  border: 0;
-  -ms-interpolation-mode: bicubic;
-}
+
 
 #map_canvas img,
 .google-maps img {
@@ -3824,78 +3817,7 @@ input[type="submit"].btn.btn-mini {
           border-radius: 0 0 0 0px;
 }
 
-.alert {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #ff7518;
-  border: 1px solid transparent;
-  -webkit-border-radius: 0;
-     -moz-border-radius: 0;
-          border-radius: 0;
-}
 
-.alert,
-.alert h4 {
-  color: #ffffff;
-}
-
-.alert h4 {
-  margin: 0;
-}
-
-.alert .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: 20px;
-}
-
-.alert-success {
-  color: #ffffff;
-  background-color: #3fb618;
-  border-color: transparent;
-}
-
-.alert-success h4 {
-  color: #ffffff;
-}
-
-.alert-danger,
-.alert-error {
-  color: #ffffff;
-  background-color: #ff0039;
-  border-color: transparent;
-}
-
-.alert-danger h4,
-.alert-error h4 {
-  color: #ffffff;
-}
-
-.alert-info {
-  color: #ffffff;
-  background-color: #9954bb;
-  border-color: transparent;
-}
-
-.alert-info h4 {
-  color: #ffffff;
-}
-
-.alert-block {
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-
-.alert-block > p,
-.alert-block > ul {
-  margin-bottom: 0;
-}
-
-.alert-block p + p {
-  margin-top: 5px;
-}
 
 .nav {
   margin-bottom: 20px;

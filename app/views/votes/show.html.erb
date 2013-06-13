@@ -23,8 +23,15 @@
   </div> </b>
  
 	<%= form_tag do %>
-	  
- 
+
+	 <div class="field">
+	<%= label_tag "Enter your email below to be sent the winning Time and Location:" %>
+	    <%= text_field_tag @vote.token %>
+
+	  <div class="actions">
+	    <%= submit_tag %>
+	  </div>
+	<br>
 
 	<% end %>
   
