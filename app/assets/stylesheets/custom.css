@@ -392,14 +392,7 @@ input[type="color"]:focus,
 		font-size: 18px;
 		color: #444; }
 
-<<<<<<< HEAD
 
-.timeInput	{
-
-background-color: white;
-
-}	
-=======
 /* #Alerts
 ================================================== */
 
@@ -474,7 +467,6 @@ background-color: white;
 .alert-block p + p {
   margin-top: 5px;
 }
->>>>>>> NArnold
 
 /* #Misc
 ================================================== */
@@ -543,22 +535,11 @@ background-color: white;
 }
 
 .tagline{
-<<<<<<< HEAD
-	background-color: lightblue;
-	padding: 3%;
-	border-radius: 5px;
-	box-shadow: 5px 5px 5px #888;
-	color: black;
-	margin-bottom: 3px;
-	margin-left: 150px;
-	margin-top: -50px;
-	text-align: right;
-=======
+
 	background-color: none;
 	padding: 12px 0px;
 	color: #36b1bf;
 	text-align: center;
->>>>>>> NArnold
 	letter-spacing: .5px;
 	font-weight: 500;
 	font-size: 20px;
@@ -578,21 +559,11 @@ background-color: white;
     box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 1);
 }
 
-#error_explanation{
-	font-size: 14px;
-	color: #fff;
-	font-weight: 300;
-}
-
-.error{
-	background: #f2385a;
-	border-radius: 2px;
-	padding: 8px 0px;
-	text-align: center;
-}
-
-/* #Media Queries
-================================================== */
+/*.timeInput {
+	position: relative;
+	width:	28%;
+	margin: 0 auto;
+}*/
 
 @media only screen and (max-width: 500px) {	
 
