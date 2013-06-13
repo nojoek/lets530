@@ -526,12 +526,8 @@ input[type="color"]:focus,
 }
 
 .logo{
-	width: 100;
+	width: 75%;
 	margin: auto;
-	margin-bottom: 3px;
-	margin-left: 0px;
-	margin-top: 3px;
-
 }
 
 .tagline{
