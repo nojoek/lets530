@@ -4,15 +4,15 @@
 <%= render 'details' %>
 
 <p>
- <b> Location Votes:</b><br>
+ <h4 class="nerd"> Location Votes:</h4>
   <% @location_votes.each do |info| %>
-   <%= Location.find(info[:id]).name %> (<%= info[:count] %>)<br>
+   <h5 class="nerd"><%= Location.find(info[:id]).name %> (<%= info[:count] %>)</h5>
   <% end %>
 <br>
  
-  Event Time Votes:<br>
+  <h4 class="nerd">Event Time Votes:</h4>
   <% @event_time_votes.each do |info| %>
-   <%= EventTime.find(info[:id]).time_description.strftime('%l:%M %p') %> (<%= info[:count] %>) <br>
+   <h5 class="nerd"><%= EventTime.find(info[:id]).time_description.strftime('%l:%M %p') %> (<%= info[:count] %>) </h5>
   <% end %>
 
 </p>
