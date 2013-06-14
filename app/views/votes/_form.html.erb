@@ -11,30 +11,38 @@
     </div>
   <% end %>
 
-  <div class="Timefield">
-	<% @eventhere.event_times.each do |et| %>
- <%=et.time_description.strftime('%l:%M %p') %> <%= f.radio_button :event_time_id, et.id %>  
 
+  <% @eventhere.event_times.each do |et| %>
+      <div class="Timefield span3 et-times">
+        <%= f.radio_button :event_time_id, et.id if et.time_description? %>
+        <span class="time-display">
+        <%= et.time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %>
+        </span>
+      </div>
   <% end %>
 
 
-	<% @eventhere.locations.each do |locale| %>
+  <% @eventhere.locations.each do |locale| %>
+    <div class="locField span4 et-times">
+      <%= f.radio_button :location_id, locale.id if locale.name? %>
+      <span class="time-display">
+        <%= locale.name  %>
+      </span>
+    </div>
 
-<span><%= locale.name  %></span><%= f.radio_button :location_id, locale.id if locale.name? %>
-  
+  <% end %>
 
-	<% end %>
-
-
- <div class="field">
-<%= f.label "Receive the winning time and location:" %>
-	    <%= f.text_field :token, :placeholder => 'Please enter your email' %>
+<br>
+<br>
+<br>
+<br>
+<br>
 
   <h2>
     "Enter your email below to be sent the winning Time and Location:"
     <%= f.text_field :token %>
   </h2>
-	
+  
   <div class="field">
     <%#= f.label :user_id %>
     <%= f.hidden_field :user_id %></br>
