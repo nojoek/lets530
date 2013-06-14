@@ -12,7 +12,6 @@
   <% end %>
 
 
-  <div class="Timefield">
 	<% @eventhere.event_times.each do |et| %>
 	<div class="Timefield span3 et-times">
 		<%=et.time_description.strftime('%l:%M %p') %> 
@@ -53,7 +52,7 @@
       <%#= f.hidden_field :event_id %>
       <%= f.hidden_field :event_id, value: params[:event_id] %>
     </div>
-    <div class="actions">
+  <div class="actions">
       <%= f.submit %>
   </div>
 <% end %>
