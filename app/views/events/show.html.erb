@@ -1,38 +1,27 @@
-<p id="notice"><%= notice %></p>
+
 
 
 <%= render 'details' %>
- 
 
-<!-- if the number of votes cast = totalvoters then the leading location votes becomes the final location and leading time becomes final time
-
-if there is only 1 option then it is the final
- 
-
-and it should end 30 minutes before the first event time
-
- -->
- 
 <p>
-  Location Votes:<br>
+ <b> Location Votes:</b><br>
   <% @location_votes.each do |info| %>
-   <%= Location.find(info[:id]).name %> (<%= info[:count] %>) ***<br>
+   <%= Location.find(info[:id]).name %> (<%= info[:count] %>)<br>
   <% end %>
 <br>
  
   Event Time Votes:<br>
   <% @event_time_votes.each do |info| %>
-   <%= EventTime.find(info[:id]).time_description.in_time_zone('Atlantic Time (Canada)').strftime('%l:%M %p') %> (<%= info[:count] %>) *** <br>
+   <%= EventTime.find(info[:id]).time_description.strftime('%l:%M %p') %> (<%= info[:count] %>) <br>
   <% end %>
 
 </p>
 
-<h3>Copy and past the link below to have others vote on this event</h3><br>
+<h4>Send the link below to have others vote on this event</h4>
 
-http://letdo.herokuapp.com<%=new_vote_path(event_id: @event.id) %>
+<h4>http://letdo.herokuapp.com<%=new_vote_path(event_id: @event.id) %></h4>
 
 <br>
-<br>
-
  
-<%= link_to 'Edit Your Event', edit_event_url %>
+ 
+<%= link_to 'Edit Your Event', edit_event_url,  class: 'btn btn-primary' %>

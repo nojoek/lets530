@@ -22,7 +22,16 @@ Lets530::Application.configure do
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'www.gmail.com',
+    :user_name            => 'results.letsdo',
+    :password             => 'letsdo2013',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+    
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
