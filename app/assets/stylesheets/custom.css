@@ -167,6 +167,13 @@ h4 small {
 	a:hover, a:focus { color: #000; }
 	p a, p a:visited { line-height: inherit; }
 
+.link{
+	background-color:	#fff;
+	padding:			10px 10px;
+	border-radius:		2px;
+	box-shadow:			inset 1px 1px 1px rgba(0,0,0,.2);
+}
+	
 
 /* #Lists
 ================================================== */
