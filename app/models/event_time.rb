@@ -9,5 +9,7 @@ class EventTime < ActiveRecord::Base
   #      Event_time.find_by_id(self.event_time_id)
   #    end
     
+
+
 end
 

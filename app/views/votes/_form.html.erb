@@ -12,8 +12,6 @@
   <% end %>
 
 
-
-
   <div class="Timefield">
 	<% @eventhere.event_times.each do |et| %>
  <%=et.time_description.strftime('%l:%M %p') %> <%= f.radio_button :event_time_id, et.id %>  
@@ -23,11 +21,9 @@
 <!-- Can we Make Two Columns, One for Times and One for Locations? -->
 <br>
 <br>
-
 	<% @eventhere.locations.each do |locale| %>
-<span><%= locale.name  %></span><%= f.radio_button :location_id, locale.id if locale.name? %>
+<span><%= locale.name %></span><%= f.radio_button :location_id, locale.id if locale.name? %>
   
-
 	<% end %>
 
   <!--  <%#= f.label "Time Option 1" %>
@@ -46,33 +42,27 @@
   	<%#= f.radio_button :event_time_column, "time4"  %>
       	<b> <%#= @eventhere.event_time.time4.strftime('%l:%M %p')  %></b></br>
     </div>
-
     <br>
-
   	<div class="Locationfield">
       <%#= f.label "Location Option 1" %>
   	<%#= f.radio_button :event_location_column, @eventhere.location.loc1 %>
     	<b>  <%#= @eventhere.location.loc1 %> </b> </br>
-
      <br> <%#= f.label "Location Option 2" %>
   	<%#= f.radio_button :event_location_column, "loc2" %>
     	<b>  <%#= @eventhere.location.loc2 %>  </b></br>
-
      <br> <%#= f.label "Location Option 3" %>
   	<%#= f.radio_button :event_location_column, "loc3" %>
      	<b> <%#= @eventhere.location.loc3 %>  </b></br>
-
      <br> <%#= f.label "Location Option 4" %>
   	<%#= f.radio_button :event_location_column, "loc4" %>
     	<b>  <%#= @eventhere.location.loc4 %>  </b> </br>
     	</div>
   	 -->
-
  <div class="field">
 <%= f.label "Receive the winning time and location:" %>
 	    <%= f.text_field :token, :placeholder => 'Please enter your email' %>
 
-	
+
   <br><div class="field">
     <%#= f.label :user_id %>
     <%= f.hidden_field :user_id %></br>

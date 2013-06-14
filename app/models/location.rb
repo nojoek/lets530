@@ -7,5 +7,4 @@ class Location < ActiveRecord::Base
   #       Location.find_by_id(self.location_id)
   #     end
     
-validates :name, presence: true
 end
