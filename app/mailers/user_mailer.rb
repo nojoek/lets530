@@ -3,7 +3,8 @@ class UserMailer < ActionMailer::Base
   
   def results(vote)
       @vote = vote
-      @url  = "letdo.herokuapp.com/events/#{:event_id}"
+      @slug = @vote.event_id
+      @url  = "letdo.herokuapp.com/events/#{:slug}"
       mail(:to => vote.token, :subject => "The Results are In")
     end
 end
